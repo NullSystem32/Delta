@@ -194,6 +194,7 @@ nav {
     position: absolute;
     inset: 0;
     background: url('https://cdn.discordapp.com/attachments/855186928911646720/1390019491454255124/PROPHETIA_Thumbnail1.png?ex=6866bc08&is=68656a88&hm=ac7cea615f8afa439965b70f16ac7b02d27cd0acab85f203068e94fa385d6249&') center/cover;
+    filter: blur(5px);
     opacity: 0.75;
 }
 
