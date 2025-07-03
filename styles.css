@@ -35,7 +35,7 @@ p, h2, h3, h4, h5, h6, li {
 .loading-triangle {
     width: 200px;
     height: 200px;
-    background: url('https://cdn.discordapp.com/attachments/855186928911646720/1390021101660147932/DELTA_LogoWhite.png?ex=6866bd87&is=68656c07&hm=df196e4a4d35157059438633653df089ac65adde2f1de5b18b994eba22435cbc&') center/cover;
+    background: url("Logos/DELTA_LogoWhite.png") center/cover;
     opacity: 0.1;
     animation: spin 1.5s ease-in-out infinite;
 }
@@ -193,7 +193,7 @@ nav {
 .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('https://cdn.discordapp.com/attachments/855186928911646720/1390019491454255124/PROPHETIA_Thumbnail1.png?ex=6866bc08&is=68656a88&hm=ac7cea615f8afa439965b70f16ac7b02d27cd0acab85f203068e94fa385d6249&') center/cover;
+    background: url("Projects/PROPHETIA/PROPHETIA_Thumbnail.png") center/cover;
     filter: blur(5px);
     opacity: 0.75;
 }
@@ -286,6 +286,7 @@ text-shadow:
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     animation: slideInLeft 1.2s ease-out;
     transition: all 0.4s ease;
+    aspect-ratio: 1 / 1;
 }
 
 .hero-game-thumb:hover {
@@ -296,7 +297,7 @@ text-shadow:
 .game-image {
     width: 100%;
     height: 100%;
-    background: url('https://cdn.discordapp.com/attachments/855186928911646720/1390020289529905224/PROPHETIA_Icon1.png?ex=6866bcc6&is=68656b46&hm=69b74010654b485a880e252ca163757d7d087246cb077b0a0a13725c4ef946f2&') center/cover;
+    background: url("Projects/PROPHETIA/PROPHETIA_Icon.png") center/cover;
 }
 
 .play-overlay {
