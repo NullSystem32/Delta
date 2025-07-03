@@ -4,19 +4,19 @@ const games = {
         title: 'PROPHETIA',
         description: 'Step into a forgotten world where gods are written, not born.<br>In PROPHETIA, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
         url: 'https://www.roblox.com/games/12816756411',
-        image: 'projects/PROPHETIA/PROPHETIA_Icon.png',
+        image: 'srcs/PROPHETIA_Icon.png',
     },
     'reality-traveler': {
         title: 'Reality Traveler',
         description: "A short, mysterious prologue to PROPHETIA.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
         url: 'https://www.roblox.com/games/15838646435',
-        image: 'projects/RealityTraveler/RealityTraveler_Icon.png'
+        image: 'srcs/RealityTraveler_Icon.png'
     },
    'blox': {
         title: 'Blox!',
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
         url: 'https://www.roblox.com/games/104672115779717',
-        image: 'projects/blox/Blox_Icon.png'
+        image: 'srcs/Blox_Icon.png'
     }
 };
 
