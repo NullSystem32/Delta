@@ -1,22 +1,28 @@
-// Game data
+// Configuração do jogo inicial (pode ser alterado aqui)
+const DEFAULT_GAME = 'prophetia'; // Opções: 'prophetia', 'reality-traveler', 'blox'
+
+// Game data com frases incluídas
 const games = {
     'prophetia': {
         title: 'PROPHETIA',
         description: 'Step into a forgotten world where gods are written, not born.<br>In PROPHETIA, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
         url: 'https://www.roblox.com/games/12816756411',
         image: 'srcs/PROPHETIA_Icon.png',
+        quote: "What's the first ever thing made? and if its made, its not the first."
     },
     'reality-traveler': {
         title: 'Reality Traveler',
         description: "A short, mysterious prologue to PROPHETIA.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
         url: 'https://www.roblox.com/games/15838646435',
-        image: 'srcs/RealityTraveler_Icon.png'
+        image: 'srcs/RealityTraveler_Icon.png',
+        quote: "Between worlds, only silence speaks the truth."
     },
-   'blox': {
+    'blox': {
         title: 'Blox!',
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
         url: 'https://www.roblox.com/games/104672115779717',
-        image: 'srcs/Blox_Icon.png'
+        image: 'srcs/Blox_Icon.png',
+        quote: "Every creation starts with a single block."
     }
 };
 
@@ -95,6 +101,48 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+// Função para atualizar o hero com base no jogo selecionado
+function updateHeroContent(gameId) {
+    const game = games[gameId];
+    if (!game) return;
+    
+    const heroTitle = document.querySelector('.hero-title .glow');
+    const heroDescription = document.querySelector('.hero-description');
+    const heroPlayButton = document.querySelector('.play-button');
+    const heroGameImage = document.querySelector('.hero-section .game-image');
+    const heroBackground = document.querySelector('.hero-bg');
+    const footerQuote = document.querySelector('footer blockquote');
+    
+    if (heroTitle) heroTitle.textContent = game.title;
+    if (heroPlayButton) heroPlayButton.href = game.url;
+    if (heroGameImage) heroGameImage.style.backgroundImage = `url(${game.image})`;
+    if (heroBackground) heroBackground.style.backgroundImage = `url(${game.image})`;
+    
+    // Atualizar frase no footer
+    if (footerQuote) {
+        const currentLanguage = document.getElementById('language-select')?.value || 'en';
+        if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
+            const quoteKey = gameId + '_quote';
+            const translatedQuote = window.translations[currentLanguage][quoteKey];
+            footerQuote.textContent = `"${translatedQuote || game.quote}"`;
+        } else {
+            footerQuote.textContent = `"${game.quote}"`;
+        }
+    }
+    
+    // Atualizar descrição do hero
+    if (heroDescription) {
+        const currentLanguage = document.getElementById('language-select')?.value || 'en';
+        if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
+            const quoteKey = gameId + '_quote';
+            const translatedQuote = window.translations[currentLanguage][quoteKey];
+            heroDescription.textContent = `"${translatedQuote || game.quote}"`;
+        } else {
+            heroDescription.textContent = `"${game.quote}"`;
+        }
+    }
+}
+
 // Games section functionality
 const gameNavBtns = document.querySelectorAll('.game-nav-btn');
 const gameTitle = document.getElementById('game-title');
@@ -121,9 +169,9 @@ gameNavBtns.forEach(btn => {
                 gameTitle.textContent = game.title;
                 
                 // Check if we need to translate the description
-                const currentLanguage = document.getElementById('language-select').value;
+                const currentLanguage = document.getElementById('language-select')?.value || 'en';
                 if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
-                    const descKey = gameId + '_desc';
+                    const descKey = gameId.replace('-', '_') + '_desc';
                     const translatedDesc = window.translations[currentLanguage][descKey];
                     gameDescription.innerHTML = translatedDesc || game.description;
                 } else {
@@ -132,6 +180,9 @@ gameNavBtns.forEach(btn => {
                 
                 gameLink.href = game.url;
                 gameBg.style.backgroundImage = `url(${game.image})`;
+                
+                // Atualizar hero também
+                updateHeroContent(gameId);
                 
                 gameDetails.style.opacity = '1';
                 gameDetails.style.transform = 'translateY(0)';
@@ -148,8 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
         languageSelect.addEventListener('change', (e) => {
             const selectedLanguage = e.target.value;
             if (selectedLanguage === 'en') {
-                // Reset to original English content
-                location.reload();
+                // Reset to original English content without reload
+                resetToEnglish();
+                localStorage.setItem('selectedLanguage', 'en');
             } else {
                 window.translateContent(selectedLanguage);
             }
@@ -159,6 +211,90 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load saved language
     window.loadSavedLanguage();
 });
+
+// Função para resetar para inglês sem recarregar
+function resetToEnglish() {
+    // Reset navigation
+    document.querySelector('[data-translate="MAIN"]').textContent = 'MAIN';
+    document.querySelector('[data-translate="GAMES"]').textContent = 'GAMES';
+    document.querySelector('[data-translate="PATREON"]').textContent = 'PATREON';
+    document.querySelector('[data-translate="CONTACT"]').textContent = 'CONTACT';
+    
+    // Reset hero
+    document.querySelector('[data-translate="PLAY NOW"]').textContent = 'PLAY NOW';
+    
+    // Reset games section
+    document.querySelector('[data-translate="OUR GAMES"]').textContent = 'OUR GAMES';
+    document.querySelector('.game-button [data-translate="PLAY"]').textContent = 'PLAY';
+    
+    // Reset current game description
+    const activeGame = document.querySelector('.game-nav-btn.active');
+    if (activeGame) {
+        const gameId = activeGame.getAttribute('data-game');
+        const game = games[gameId];
+        if (game) {
+            document.getElementById('game-description').innerHTML = game.description;
+        }
+    }
+    
+    // Reset patreon section
+    document.querySelector('[data-translate="SUPPORT PROPHETIA DEVELOPMENT"]').textContent = 'SUPPORT PROPHETIA DEVELOPMENT';
+    document.querySelector('[data-translate="patreon_description"]').innerHTML = 'Making such a complex game as <span class="glow">PROPHETIA</span> isn\'t cheap and easy.';
+    document.querySelector('[data-translate="BE A PATREON"]').textContent = 'BE A PATREON';
+    
+    // Reset patreon tiers
+    const tierTranslations = {
+        'Name in Credits': 'Name in Credits',
+        'Monthly Newsletter with Secrets and Curiosities': 'Monthly Newsletter with Secrets and Curiosities',
+        'Development Updates': 'Development Updates',
+        'Discord Role': 'Discord Role',
+        'Access to a VIP Supporters Category on Discord': 'Access to a VIP Supporters Category on Discord',
+        'Early Access to Teasers': 'Early Access to Teasers',
+        'Monthly Q&A Sessions': 'Monthly Q&A Sessions',
+        'Participation in Small Polls': 'Participation in Small Polls',
+        'Early Access to Concept Art': 'Early Access to Concept Art',
+        'Increased Visibility When Sending Art/Concept Suggestions': 'Increased Visibility When Sending Art/Concept Suggestions',
+        'In-game Tag: "Above Us"': 'In-game Tag: "Above Us"',
+        'all benefits from Tier 1 (Lit) and 2 (Messier)': 'all benefits from Tier 1 (Lit) and 2 (Messier)',
+        'Participate in special raffles to help create new characters for the game.': 'Participate in special raffles to help create new characters for the game.',
+        'Join major polls that impact key development decisions.': 'Join major polls that impact key development decisions.',
+        'Access to Top-Secret Development Leaks': 'Access to Top-Secret Development Leaks',
+        'Participation in Stages with Content Creators and High-Level Members': 'Participation in Stages with Content Creators and High-Level Members',
+        'Honored in the Patron Hall of Names': 'Honored in the Patron Hall of Names',
+        'Receive a special, backer-only item in the game': 'Receive a special, backer-only item in the game',
+        'Access a special in-game "party" for top supporters only.': 'Access a special in-game "party" for top supporters only.'
+    };
+    
+    Object.keys(tierTranslations).forEach(key => {
+        const element = document.querySelector(`[data-translate="${key}"]`);
+        if (element) {
+            element.textContent = tierTranslations[key];
+        }
+    });
+    
+    // Reset contact section
+    document.querySelector('[data-translate="CONECT WITH US"]').textContent = 'CONECT WITH US';
+    document.querySelector('[data-translate="contact_description"]').textContent = 'Follow our socials for updates & announcements.';
+    document.querySelector('[data-translate="Discord Server"]').textContent = 'Discord Server';
+    document.querySelector('[data-translate="Null (Scripter) Twitter"]').textContent = 'Null (Scripter) Twitter';
+    document.querySelector('[data-translate="Dan (Animator) Twitter"]').textContent = 'Dan (Animator) Twitter';
+    document.querySelector('[data-translate="GameJolt"]').textContent = 'GameJolt';
+    document.querySelector('[data-translate="Roblox Group"]').textContent = 'Roblox Group';
+    
+    // Reset footer
+    document.querySelector('[data-translate="Made with"]').textContent = 'Made with';
+    document.querySelector('[data-translate="and love"]').textContent = 'and love';
+    
+    // Reset hero quote and footer quote
+    const currentGame = document.querySelector('.game-nav-btn.active')?.getAttribute('data-game') || DEFAULT_GAME;
+    const game = games[currentGame];
+    if (game) {
+        const heroDescription = document.querySelector('.hero-description');
+        const footerQuote = document.querySelector('footer blockquote');
+        if (heroDescription) heroDescription.textContent = `"${game.quote}"`;
+        if (footerQuote) footerQuote.textContent = `"${game.quote}"`;
+    }
+}
 
 // Easter egg functionality
 let clickCount = 0;
@@ -307,12 +443,25 @@ gameNavBtns.forEach(btn => {
 
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    // Set initial game content
-    const initialGame = games['prophetia'];
-    gameTitle.textContent = initialGame.title;
-    gameDescription.innerHTML = initialGame.description;
-    gameLink.href = initialGame.url;
-    gameBg.style.backgroundImage = `url(${initialGame.image})`;
+    // Set initial game content based on DEFAULT_GAME
+    const initialGame = games[DEFAULT_GAME];
+    if (initialGame) {
+        gameTitle.textContent = initialGame.title;
+        gameDescription.innerHTML = initialGame.description;
+        gameLink.href = initialGame.url;
+        gameBg.style.backgroundImage = `url(${initialGame.image})`;
+        
+        // Set active button for default game
+        gameNavBtns.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-game') === DEFAULT_GAME) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Update hero content
+        updateHeroContent(DEFAULT_GAME);
+    }
     
     // Add initial animations
     setTimeout(() => {
