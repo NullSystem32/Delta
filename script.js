@@ -262,7 +262,7 @@ function resetToEnglish() {
         'Participation in Stages with Content Creators and High-Level Members': 'Participation in Stages with Content Creators and High-Level Members',
         'Honored in the Patron Hall of Names': 'Honored in the Patron Hall of Names',
         'Receive a special, backer-only item in the game': 'Receive a special, backer-only item in the game',
-        'Access a special in-game "party" for top supporters only.': 'Access a special in-game "party" for top supporters only.'
+        'access_special_party_for_supporters': 'Access a special in-game "party" for top supporters only.'
     };
     
     Object.keys(tierTranslations).forEach(key => {

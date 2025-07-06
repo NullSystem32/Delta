@@ -48,7 +48,7 @@ const translations = {
         'Participation in Stages with Content Creators and High-Level Members': 'Participação em Estágios com Criadores de Conteúdo e Membros de Alto Nível',
         'Honored in the Patron Hall of Names': 'Honrado no Hall dos Nomes de Patronos',
         'Receive a special, backer-only item in the game': 'Receba um item especial exclusivo para apoiadores no jogo',
-        'Access a special in-game "party" for top supporters only.': 'Acesse uma "festa" especial no jogo apenas para principais apoiadores.',
+        'access_special_party_for_supporters': 'Acesse uma "festa" especial no jogo apenas para principais apoiadores.',
         
         // Contact Section
         'CONECT WITH US': 'CONECTE-SE CONOSCO',
@@ -112,7 +112,7 @@ const translations = {
         'Participation in Stages with Content Creators and High-Level Members': 'Participación en Etapas con Creadores de Contenido y Miembros de Alto Nivel',
         'Honored in the Patron Hall of Names': 'Honrado en el Salón de Nombres de Patrocinadores',
         'Receive a special, backer-only item in the game': 'Recibe un artículo especial exclusivo para patrocinadores en el juego',
-        'Access a special in-game "party" for top supporters only.': 'Accede a una "fiesta" especial en el juego solo para principales seguidores.',
+        'access_special_party_for_supporters': 'Accede a una "fiesta" especial en el juego solo para principales seguidores.',
         
         // Contact Section
         'CONECT WITH US': 'CONÉCTATE CON NOSOTROS',
@@ -176,7 +176,7 @@ const translations = {
         'Participation in Stages with Content Creators and High-Level Members': 'Participation aux Étapes avec les Créateurs de Contenu et Membres de Haut Niveau',
         'Honored in the Patron Hall of Names': 'Honoré dans le Hall des Noms de Mécènes',
         'Receive a special, backer-only item in the game': 'Recevez un objet spécial exclusif aux mécènes dans le jeu',
-        'Access a special in-game "party" for top supporters only.': 'Accédez à une "fête" spéciale dans le jeu pour les principaux supporters seulement.',
+        'access_special_party_for_supporters': 'Accédez à une "fête" spéciale dans le jeu pour les principaux supporters seulement.',
         
         // Contact Section
         'CONECT WITH US': 'CONNECTEZ-VOUS AVEC NOUS',
@@ -240,7 +240,7 @@ const translations = {
         'Participation in Stages with Content Creators and High-Level Members': 'Teilnahme an Phasen mit Content-Erstellern und hochrangigen Mitgliedern',
         'Honored in the Patron Hall of Names': 'Geehrt in der Patron Hall of Names',
         'Receive a special, backer-only item in the game': 'Erhalten Sie einen speziellen, nur für Unterstützer bestimmten Gegenstand im Spiel',
-        'Access a special in-game "party" for top supporters only.': 'Zugang zu einer speziellen Spiel-"Party" nur für Top-Unterstützer.',
+        'access_special_party_for_supporters': 'Zugang zu einer speziellen Spiel-"Party" nur für Top-Unterstützer.',
         
         // Contact Section
         'CONECT WITH US': 'VERBINDEN SIE SICH MIT UNS',
