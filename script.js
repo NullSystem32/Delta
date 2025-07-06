@@ -4,17 +4,19 @@ const DEFAULT_GAME = 'prophetia'; // Opções: 'prophetia', 'reality-traveler', 
 // Game data com frases incluídas
 const games = {
     'prophetia': {
-        title: 'PROPHETIA',
-        description: 'Step into a forgotten world where gods are written, not born.<br>In PROPHETIA, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
+        title: '<span class="prophetia">PROPHETIA</span>',
+        description: 'Step into a forgotten world where gods are written, not born.<br>In <span class="prophetia">PROPHETIA</span>, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
         url: 'https://www.roblox.com/games/12816756411',
         image: 'srcs/PROPHETIA_Icon.png',
+        thumbnail: 'srcs/PROPHETIA_Thumbnail.png',
         quote: "What's the first ever thing made? and if its made, its not the first."
     },
     'reality-traveler': {
         title: 'Reality Traveler',
-        description: "A short, mysterious prologue to PROPHETIA.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
+        description: "A short, mysterious prologue to <span class='prophetia'>PROPHETIA</span>.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
         url: 'https://www.roblox.com/games/15838646435',
         image: 'srcs/RealityTraveler_Icon.png',
+        thumbnail: 'srcs/RealityTraveler_Thumbnail.png',
         quote: "Between worlds, only silence speaks the truth."
     },
     'blox': {
@@ -22,8 +24,9 @@ const games = {
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
         url: 'https://www.roblox.com/games/104672115779717',
         image: 'srcs/Blox_Icon.png',
+        thumbnail: 'srcs/Blox_Thumbnail.png',
         quote: "Every creation starts with a single block."
-    }
+    },
 };
 
 // Loading screen
@@ -112,10 +115,10 @@ function initializeHero() {
     const heroGameImage = document.querySelector('.hero-section .game-image');
     const heroBackground = document.querySelector('.hero-bg');
     
-    if (heroTitle) heroTitle.textContent = defaultGame.title;
+    if (heroTitle) heroTitle.innerHTML = defaultGame.title;
     if (heroPlayButton) heroPlayButton.href = defaultGame.url;
     if (heroGameImage) heroGameImage.style.backgroundImage = `url(${defaultGame.image})`;
-    if (heroBackground) heroBackground.style.backgroundImage = `url(${defaultGame.image})`;
+    if (heroBackground) heroBackground.style.backgroundImage = `url(${defaultGame.thumbnail})`;
     
     // Definir descrição do hero com a frase do jogo padrão
     if (heroDescription) {
@@ -144,7 +147,7 @@ function generateGameButtons() {
         const button = document.createElement('button');
         button.className = 'game-nav-btn';
         button.setAttribute('data-game', gameId);
-        button.textContent = game.title;
+        button.innerHTML = game.title;
         
         // Marcar o primeiro botão como ativo
         if (index === 0) {
@@ -165,6 +168,7 @@ function setupGameNavigation() {
     const gameDescription = document.getElementById('game-description');
     const gameLink = document.getElementById('game-link');
     const gameBg = document.getElementById('game-bg');
+    const gameCardThumb = document.getElementById('game-card-thumb');
 
     gameNavBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -182,7 +186,7 @@ function setupGameNavigation() {
                 gameDetails.style.transform = 'translateY(30px)';
                 
                 setTimeout(() => {
-                    gameTitle.textContent = game.title;
+                    gameTitle.innerHTML = game.title;
                     
                     // Check if we need to translate the description
                     const currentLanguage = document.getElementById('language-select')?.value || 'en';
@@ -196,7 +200,8 @@ function setupGameNavigation() {
                     
                     gameLink.href = game.url;
                     gameBg.style.backgroundImage = `url(${game.image})`;
-                    
+                    gameCardThumb.style.backgroundImage = `url(${game.thumbnail})`;
+
                     gameDetails.style.opacity = '1';
                     gameDetails.style.transform = 'translateY(0)';
                 }, 300);
@@ -517,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const gameLink = document.getElementById('game-link');
         const gameBg = document.getElementById('game-bg');
         
-        if (gameTitle) gameTitle.textContent = initialGame.title;
+        if (gameTitle) gameTitle.innerHTML = initialGame.title;
         if (gameDescription) gameDescription.innerHTML = initialGame.description;
         if (gameLink) gameLink.href = initialGame.url;
         if (gameBg) gameBg.style.backgroundImage = `url(${initialGame.image})`;

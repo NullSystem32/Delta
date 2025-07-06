@@ -70,11 +70,13 @@
         <h2 class="section-title" data-translate="OUR GAMES">OUR GAMES</h2>
         
         <div class="games-nav">
-            <!-- Os botões serão gerados dinamicamente pelo JavaScript -->
+            
         </div>
         
         <div class="game-showcase">
             <div class="game-details">
+                <div class="game-card-thumb" id="game-card-thumb"></div>
+
                 <div class="game-content">
                     <h3 id="game-title">PROPHETIA</h3>
                     <p id="game-description">Step into a forgotten world where gods are written, not born. In PROPHETIA, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.</p>
@@ -91,13 +93,12 @@
 
     <!-- Patreon Section -->
     <section id="patreon" class="patreon-section">
-        <h2 class="section-title" data-translate="SUPPORT PROPHETIA DEVELOPMENT">SUPPORT PROPHETIA DEVELOPMENT</h2>
-        <p class="section-description" data-translate="patreon_description">Making such a complex game as <span class="glow">PROPHETIA</span> isn't cheap and easy.</p>
+        <h2 class="section-title" data-translate="SUPPORT PROPHETIA DEVELOPMENT">SUPPORT <span class="prophetia">PROPHETIA</span> DEVELOPMENT</h2>
+        <p class="section-description" data-translate="patreon_description">Making such a complex game as <span class="prophetia">PROPHETIA</span> isn't cheap and easy.</p>
         
         <div class="patreon-tiers">
             <div class="tier">
-                <img src="srcs/Lit.png" class="tier-icon">
-                <h3>Lit</h3>
+                <span style="font-size: 30px;">Lit </span> <img src="srcs/Lit.png" class="glow" style="width:32px; height:32px;">
                 <div class="tier-price">$5<span>/month</span></div>
                 <ul>
                     <li data-translate="Name in Credits">Name in Credits</li>
@@ -109,8 +110,7 @@
             </div>
             
             <div class="tier featured">
-                <img src="srcs/Writter.png" class="tier-icon">
-                <h3>Writter</h3>
+                <span style="font-size: 30px;">Writter </span> <img src="srcs/Writter.png" class="glow" style="width:32px; height:32px;">
                 <div class="tier-price">$10<span>/month</span></div>
                 <ul>
                     <li data-translate="Early Access to Teasers">Early Access to Teasers</li>
@@ -124,8 +124,7 @@
             </div>
             
             <div class="tier">
-                <img src="srcs/Messier.png" class="tier-icon">
-                <h3>Messier</h3>
+                <span style="font-size: 30px;">Messier </span> <img src="srcs/Messier.png" class="glow" style="width:32px; height:32px;">
                 <div class="tier-price">$15<span>/month</span></div>
                 <ul>
                     <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit) and 2 (Messier)</li>
@@ -203,7 +202,7 @@
         <div class="easter-egg-content">
             <div class="easter-triangle-big"></div>
             <img src="srcs/Triangle.png" class="glow" alt="Triangle Logo" style="width:72px; height:72px; vertical-align:middle;">
-            <p>Closer than you think.</p>
+            <p data-translate="Closer than you think">Closer than you think</p>
             <div class="matrix-triangles"></div>
         </div>
     </div>

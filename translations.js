@@ -15,8 +15,8 @@ const translations = {
         'PLAY': 'JOGAR',
         
         // Game Descriptions
-        'prophetia_desc': 'Entre em um mundo esquecido onde deuses são escritos, não nascidos.<br>Em PROPHETIA, você é um viajante solitário em uma vasta realidade surreal moldada por histórias há muito abandonadas. Explore reinos quebrados, descubra memórias perdidas e monte a verdade por trás de uma criação divina perdida no tempo. O mundo não espera por heróis—apenas aqueles que fazem as perguntas certas.',
-        'reality_traveler_desc': 'Um prólogo curto e misterioso para PROPHETIA.<br>Reality Traveler te coloca em um espaço silencioso entre mundos, armado apenas com pensamento e visão. Não é sobre o que você faz, mas o que você percebe. Olhe atentamente—sua história já começou.',
+        'prophetia_desc': 'Entre em um mundo esquecido onde deuses são escritos, não nascidos.<br>Em <span class="prophetia">PROPHETIA</span>, você é um viajante solitário em uma vasta realidade surreal moldada por histórias há muito abandonadas. Explore reinos quebrados, descubra memórias perdidas e monte a verdade por trás de uma criação divina perdida no tempo. O mundo não espera por heróis—apenas aqueles que fazem as perguntas certas.',
+        'reality_traveler_desc': 'Um prólogo curto e misterioso para <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler te coloca em um espaço silencioso entre mundos, armado apenas com pensamento e visão. Não é sobre o que você faz, mas o que você percebe. Olhe atentamente—sua história já começou.',
         'blox_desc': 'Construa com blocos.<br>Pinte, conecte e energize-os.<br>Crie qualquer coisa desde estruturas simples até máquinas complexas em uma sandbox totalmente interativa.',
         
         // Game Quotes
@@ -25,8 +25,8 @@ const translations = {
         'blox_quote': 'Toda criação começa com um único bloco.',
         
         // Patreon Section
-        'SUPPORT PROPHETIA DEVELOPMENT': 'APOIE O DESENVOLVIMENTO DE PROPHETIA',
-        'patreon_description': 'Fazer um jogo tão complexo como <span class="glow">PROPHETIA</span> não é barato nem fácil.',
+        'SUPPORT PROPHETIA DEVELOPMENT': 'APOIE O DESENVOLVIMENTO DE <span class="prophetia">PROPHETIA</span>',
+        'patreon_description': 'Fazer um jogo tão complexo como <span class="glow"><span class="prophetia">PROPHETIA</span></span> não é barato nem fácil.',
         'BE A PATREON': 'SEJA UM PATREON',
         
         // Patreon Tiers
@@ -60,6 +60,7 @@ const translations = {
         'Roblox Group': 'Grupo Roblox',
         
         // Footer
+        'Closer than you think': 'Mais perto do que você pensa',
         'Made with': 'Feito com',
         'and love': 'e amor'
     },
@@ -79,8 +80,8 @@ const translations = {
         'PLAY': 'JUGAR',
         
         // Game Descriptions
-        'prophetia_desc': 'Entra en un mundo olvidado donde los dioses son escritos, no nacidos.<br>En PROPHETIA, eres un viajero solitario en una vasta realidad surrealista moldeada por historias abandonadas hace mucho tiempo. Explora reinos rotos, descubre memorias perdidas y arma la verdad detrás de una creación divina perdida en el tiempo. El mundo no espera héroes—solo aquellos que hacen las preguntas correctas.',
-        'reality_traveler_desc': 'Un prólogo corto y misterioso para PROPHETIA.<br>Reality Traveler te coloca en un espacio silencioso entre mundos, armado solo con pensamiento y visión. No se trata de lo que haces, sino de lo que notas. Mira atentamente—tu historia ya ha comenzado.',
+        'prophetia_desc': 'Entra en un mundo olvidado donde los dioses son escritos, no nacidos.<br>En <span class="prophetia">PROPHETIA</span>, eres un viajero solitario en una vasta realidad surrealista moldeada por historias abandonadas hace mucho tiempo. Explora reinos rotos, descubre memorias perdidas y arma la verdad detrás de una creación divina perdida en el tiempo. El mundo no espera héroes—solo aquellos que hacen las preguntas correctas.',
+        'reality_traveler_desc': 'Un prólogo corto y misterioso para <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler te coloca en un espacio silencioso entre mundos, armado solo con pensamiento y visión. No se trata de lo que haces, sino de lo que notas. Mira atentamente—tu historia ya ha comenzado.',
         'blox_desc': 'Construye con bloques.<br>Píntalos, conéctalos y energízalos.<br>Crea cualquier cosa desde estructuras simples hasta máquinas complejas en un sandbox completamente interactivo.',
         
         // Game Quotes
@@ -89,8 +90,8 @@ const translations = {
         'blox_quote': 'Toda creación comienza con un solo bloque.',
         
         // Patreon Section
-        'SUPPORT PROPHETIA DEVELOPMENT': 'APOYA EL DESARROLLO DE PROPHETIA',
-        'patreon_description': 'Hacer un juego tan complejo como <span class="glow">PROPHETIA</span> no es barato ni fácil.',
+        'SUPPORT PROPHETIA DEVELOPMENT': 'APOYA EL DESARROLLO DE <span class="prophetia">PROPHETIA</span>',
+        'patreon_description': 'Hacer un juego tan complejo como <span class="prophetia">PROPHETIA</span> no es barato ni fácil.',
         'BE A PATREON': 'SÉ UN PATREON',
         
         // Patreon Tiers
@@ -124,6 +125,7 @@ const translations = {
         'Roblox Group': 'Grupo Roblox',
         
         // Footer
+        'Closer than you think': 'Más cerca de lo que piensas',
         'Made with': 'Hecho con',
         'and love': 'y amor'
     },
@@ -143,8 +145,8 @@ const translations = {
         'PLAY': 'JOUER',
         
         // Game Descriptions
-        'prophetia_desc': 'Entrez dans un monde oublié où les dieux sont écrits, pas nés.<br>Dans PROPHETIA, vous êtes un voyageur solitaire dans une vaste réalité surréaliste façonnée par des histoires abandonnées depuis longtemps. Explorez des royaumes brisés, découvrez des souvenirs perdus et assemblez la vérité derrière une création divine perdue dans le temps. Le monde n\'attend pas les héros—seulement ceux qui posent les bonnes questions.',
-        'reality_traveler_desc': 'Un prologue court et mystérieux pour PROPHETIA.<br>Reality Traveler vous place dans un espace silencieux entre les mondes, armé seulement de pensée et de vision. Il ne s\'agit pas de ce que vous faites, mais de ce que vous remarquez. Regardez attentivement—votre histoire a déjà commencé.',
+        'prophetia_desc': 'Entrez dans un monde oublié où les dieux sont écrits, pas nés.<br>Dans <span class="prophetia">PROPHETIA</span>, vous êtes un voyageur solitaire dans une vaste réalité surréaliste façonnée par des histoires abandonnées depuis longtemps. Explorez des royaumes brisés, découvrez des souvenirs perdus et assemblez la vérité derrière une création divine perdue dans le temps. Le monde n\'attend pas les héros—seulement ceux qui posent les bonnes questions.',
+        'reality_traveler_desc': 'Un prologue court et mystérieux pour <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler vous place dans un espace silencieux entre les mondes, armé seulement de pensée et de vision. Il ne s\'agit pas de ce que vous faites, mais de ce que vous remarquez. Regardez attentivement—votre histoire a déjà commencé.',
         'blox_desc': 'Construisez avec des blocs.<br>Peignez-les, connectez-les et alimentez-les.<br>Créez n\'importe quoi depuis des structures simples jusqu\'aux machines complexes dans un bac à sable entièrement interactif.',
         
         // Game Quotes
@@ -153,8 +155,8 @@ const translations = {
         'blox_quote': 'Toute création commence par un seul bloc.',
         
         // Patreon Section
-        'SUPPORT PROPHETIA DEVELOPMENT': 'SOUTENEZ LE DÉVELOPPEMENT DE PROPHETIA',
-        'patreon_description': 'Faire un jeu aussi complexe que <span class="glow">PROPHETIA</span> n\'est ni bon marché ni facile.',
+        'SUPPORT PROPHETIA DEVELOPMENT': 'SOUTENEZ LE DÉVELOPPEMENT DE <span class="prophetia">PROPHETIA</span>',
+        'patreon_description': 'Faire un jeu aussi complexe que <span class="prophetia">PROPHETIA</span> n\'est ni bon marché ni facile.',
         'BE A PATREON': 'DEVENEZ UN PATREON',
         
         // Patreon Tiers
@@ -188,6 +190,7 @@ const translations = {
         'Roblox Group': 'Groupe Roblox',
         
         // Footer
+        'Closer than you think': 'Plus proche que vous ne le pensez',
         'Made with': 'Fait avec',
         'and love': 'et amour'
     },
@@ -207,8 +210,8 @@ const translations = {
         'PLAY': 'SPIELEN',
         
         // Game Descriptions
-        'prophetia_desc': 'Betreten Sie eine vergessene Welt, in der Götter geschrieben, nicht geboren werden.<br>In PROPHETIA sind Sie ein einsamer Reisender in einer weiten, surrealen Realität, die von längst verlassenen Geschichten geprägt ist. Erkunden Sie zerbrochene Reiche, entdecken Sie verlorene Erinnerungen und setzen Sie die Wahrheit hinter einer göttlichen Schöpfung zusammen, die in der Zeit verloren ging. Die Welt wartet nicht auf Helden—nur auf diejenigen, die die richtigen Fragen stellen.',
-        'reality_traveler_desc': 'Ein kurzer, mysteriöser Prolog zu PROPHETIA.<br>Reality Traveler versetzt Sie in einen stillen Raum zwischen den Welten, bewaffnet nur mit Gedanken und Vision. Es geht nicht darum, was Sie tun, sondern was Sie bemerken. Schauen Sie genau hin—Ihre Geschichte hat bereits begonnen.',
+        'prophetia_desc': 'Betreten Sie eine vergessene Welt, in der Götter geschrieben, nicht geboren werden.<br>In <span class="prophetia">PROPHETIA</span> sind Sie ein einsamer Reisender in einer weiten, surrealen Realität, die von längst verlassenen Geschichten geprägt ist. Erkunden Sie zerbrochene Reiche, entdecken Sie verlorene Erinnerungen und setzen Sie die Wahrheit hinter einer göttlichen Schöpfung zusammen, die in der Zeit verloren ging. Die Welt wartet nicht auf Helden—nur auf diejenigen, die die richtigen Fragen stellen.',
+        'reality_traveler_desc': 'Ein kurzer, mysteriöser Prolog zu <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler versetzt Sie in einen stillen Raum zwischen den Welten, bewaffnet nur mit Gedanken und Vision. Es geht nicht darum, was Sie tun, sondern was Sie bemerken. Schauen Sie genau hin—Ihre Geschichte hat bereits begonnen.',
         'blox_desc': 'Bauen Sie mit Blöcken.<br>Bemalen, verbinden und versorgen Sie sie mit Energie.<br>Erstellen Sie alles von einfachen Strukturen bis hin zu komplexen Maschinen in einer vollständig interaktiven Sandbox.',
         
         // Game Quotes
@@ -217,8 +220,8 @@ const translations = {
         'blox_quote': 'Jede Schöpfung beginnt mit einem einzigen Block.',
         
         // Patreon Section
-        'SUPPORT PROPHETIA DEVELOPMENT': 'UNTERSTÜTZEN SIE DIE ENTWICKLUNG VON PROPHETIA',
-        'patreon_description': 'Ein so komplexes Spiel wie <span class="glow">PROPHETIA</span> zu machen ist weder billig noch einfach.',
+        'SUPPORT PROPHETIA DEVELOPMENT': 'UNTERSTÜTZEN SIE DIE ENTWICKLUNG VON <span class="prophetia">PROPHETIA</span>',
+        'patreon_description': 'Ein so komplexes Spiel wie <span class="prophetia">PROPHETIA</span> zu machen ist weder billig noch einfach.',
         'BE A PATREON': 'WERDEN SIE EIN PATREON',
         
         // Patreon Tiers
@@ -252,6 +255,7 @@ const translations = {
         'Roblox Group': 'Roblox Gruppe',
         
         // Footer
+        'Closer than you think': 'Näher als du denkst',
         'Made with': 'Gemacht mit',
         'and love': 'und Liebe'
     }
