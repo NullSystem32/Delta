@@ -254,7 +254,7 @@ function resetToEnglish() {
         'Participation in Small Polls': 'Participation in Small Polls',
         'Early Access to Concept Art': 'Early Access to Concept Art',
         'Increased Visibility When Sending Art/Concept Suggestions': 'Increased Visibility When Sending Art/Concept Suggestions',
-        'In-game Tag: "Above Us"': 'In-game Tag: "Above Us"',
+        'ingame_tag_above_us': 'In-game Tag: "Above Us"',
         'all benefits from Tier 1 (Lit) and 2 (Messier)': 'all benefits from Tier 1 (Lit) and 2 (Messier)',
         'Participate in special raffles to help create new characters for the game.': 'Participate in special raffles to help create new characters for the game.',
         'Join major polls that impact key development decisions.': 'Join major polls that impact key development decisions.',
