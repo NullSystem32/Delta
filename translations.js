@@ -39,7 +39,7 @@ const translations = {
         'Monthly Q&A Sessions': 'Sessões Mensais de Perguntas e Respostas',
         'Participation in Small Polls': 'Participação em Enquetes Pequenas',
         'Early Access to Concept Art': 'Acesso Antecipado a Arte Conceitual',
-        'Increased Visibility When Sending Art/Concept Suggestions': 'Maior Visibilidade ao Enviar Sugestões de Arte/Conceito',
+        'Increased Visibility When Sending Art/Concept Suggestions': 'Maior Visibilidade ao Enviar Sugerências de Arte/Conceito',
         'ingame_tag_above_us': 'Tag no Jogo: "Above Us"',
         'all benefits from Tier 1 (Lit) and 2 (Messier)': 'todos os benefícios do Nível 1 (Lit) e 2 (Messier)',
         'Participate in special raffles to help create new characters for the game.': 'Participe de sorteios especiais para ajudar a criar novos personagens para o jogo.',
@@ -285,15 +285,15 @@ function translateContent(language) {
         }
     }
     
-    // Traduzir frase do hero e footer
+    // Traduzir frase do hero (apenas se não for o jogo padrão)
     const heroDescription = document.querySelector('.hero-description');
-    const footerQuote = document.querySelector('footer blockquote');
-    if (activeGame) {
-        const gameId = activeGame.getAttribute('data-game');
-        const quoteKey = gameId.replace('-', '_') + '_quote';
-        if (translation[quoteKey]) {
-            if (heroDescription) heroDescription.textContent = `"${translation[quoteKey]}"`;
-            if (footerQuote) footerQuote.textContent = `"${translation[quoteKey]}"`;
+    if (heroDescription) {
+        const defaultGame = window.games ? window.games[window.DEFAULT_GAME || 'prophetia'] : null;
+        if (defaultGame) {
+            const quoteKey = (window.DEFAULT_GAME || 'prophetia').replace('-', '_') + '_quote';
+            if (translation[quoteKey]) {
+                heroDescription.textContent = `"${translation[quoteKey]}"`;
+            }
         }
     }
     

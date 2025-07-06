@@ -101,95 +101,124 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-// Função para atualizar o hero com base no jogo selecionado
-function updateHeroContent(gameId) {
-    const game = games[gameId];
-    if (!game) return;
+// Função para inicializar o hero com o jogo padrão (não muda dinamicamente)
+function initializeHero() {
+    const defaultGame = games[DEFAULT_GAME];
+    if (!defaultGame) return;
     
     const heroTitle = document.querySelector('.hero-title .glow');
     const heroDescription = document.querySelector('.hero-description');
     const heroPlayButton = document.querySelector('.play-button');
     const heroGameImage = document.querySelector('.hero-section .game-image');
     const heroBackground = document.querySelector('.hero-bg');
-    const footerQuote = document.querySelector('footer blockquote');
     
-    if (heroTitle) heroTitle.textContent = game.title;
-    if (heroPlayButton) heroPlayButton.href = game.url;
-    if (heroGameImage) heroGameImage.style.backgroundImage = `url(${game.image})`;
-    if (heroBackground) heroBackground.style.backgroundImage = `url(${game.image})`;
+    if (heroTitle) heroTitle.textContent = defaultGame.title;
+    if (heroPlayButton) heroPlayButton.href = defaultGame.url;
+    if (heroGameImage) heroGameImage.style.backgroundImage = `url(${defaultGame.image})`;
+    if (heroBackground) heroBackground.style.backgroundImage = `url(${defaultGame.image})`;
     
-    // Atualizar frase no footer
-    if (footerQuote) {
-        const currentLanguage = document.getElementById('language-select')?.value || 'en';
-        if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
-            const quoteKey = gameId + '_quote';
-            const translatedQuote = window.translations[currentLanguage][quoteKey];
-            footerQuote.textContent = `"${translatedQuote || game.quote}"`;
-        } else {
-            footerQuote.textContent = `"${game.quote}"`;
-        }
-    }
-    
-    // Atualizar descrição do hero
+    // Definir descrição do hero com a frase do jogo padrão
     if (heroDescription) {
         const currentLanguage = document.getElementById('language-select')?.value || 'en';
         if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
-            const quoteKey = gameId + '_quote';
+            const quoteKey = DEFAULT_GAME.replace('-', '_') + '_quote';
             const translatedQuote = window.translations[currentLanguage][quoteKey];
-            heroDescription.textContent = `"${translatedQuote || game.quote}"`;
+            heroDescription.textContent = `"${translatedQuote || defaultGame.quote}"`;
         } else {
-            heroDescription.textContent = `"${game.quote}"`;
+            heroDescription.textContent = `"${defaultGame.quote}"`;
         }
     }
 }
 
-// Games section functionality
-const gameNavBtns = document.querySelectorAll('.game-nav-btn');
-const gameTitle = document.getElementById('game-title');
-const gameDescription = document.getElementById('game-description');
-const gameLink = document.getElementById('game-link');
-const gameBg = document.getElementById('game-bg');
-
-gameNavBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const gameId = btn.getAttribute('data-game');
+// Função para gerar botões de jogos dinamicamente
+function generateGameButtons() {
+    const gamesNav = document.querySelector('.games-nav');
+    if (!gamesNav) return;
+    
+    // Limpar botões existentes
+    gamesNav.innerHTML = '';
+    
+    // Criar botões para cada jogo
+    Object.keys(games).forEach((gameId, index) => {
         const game = games[gameId];
+        const button = document.createElement('button');
+        button.className = 'game-nav-btn';
+        button.setAttribute('data-game', gameId);
+        button.textContent = game.title;
         
-        if (game) {
-            // Update active button
-            gameNavBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Update game content with smooth animation
-            const gameDetails = document.querySelector('.game-details');
-            gameDetails.style.opacity = '0';
-            gameDetails.style.transform = 'translateY(30px)';
-            
-            setTimeout(() => {
-                gameTitle.textContent = game.title;
-                
-                // Check if we need to translate the description
-                const currentLanguage = document.getElementById('language-select')?.value || 'en';
-                if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
-                    const descKey = gameId.replace('-', '_') + '_desc';
-                    const translatedDesc = window.translations[currentLanguage][descKey];
-                    gameDescription.innerHTML = translatedDesc || game.description;
-                } else {
-                    gameDescription.innerHTML = game.description;
-                }
-                
-                gameLink.href = game.url;
-                gameBg.style.backgroundImage = `url(${game.image})`;
-                
-                // Atualizar hero também
-                updateHeroContent(gameId);
-                
-                gameDetails.style.opacity = '1';
-                gameDetails.style.transform = 'translateY(0)';
-            }, 300);
+        // Marcar o primeiro botão como ativo
+        if (index === 0) {
+            button.classList.add('active');
         }
+        
+        gamesNav.appendChild(button);
     });
-});
+    
+    // Adicionar event listeners aos novos botões
+    setupGameNavigation();
+}
+
+// Games section functionality
+function setupGameNavigation() {
+    const gameNavBtns = document.querySelectorAll('.game-nav-btn');
+    const gameTitle = document.getElementById('game-title');
+    const gameDescription = document.getElementById('game-description');
+    const gameLink = document.getElementById('game-link');
+    const gameBg = document.getElementById('game-bg');
+
+    gameNavBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const gameId = btn.getAttribute('data-game');
+            const game = games[gameId];
+            
+            if (game) {
+                // Update active button
+                gameNavBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update game content with smooth animation
+                const gameDetails = document.querySelector('.game-details');
+                gameDetails.style.opacity = '0';
+                gameDetails.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    gameTitle.textContent = game.title;
+                    
+                    // Check if we need to translate the description
+                    const currentLanguage = document.getElementById('language-select')?.value || 'en';
+                    if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
+                        const descKey = gameId.replace('-', '_') + '_desc';
+                        const translatedDesc = window.translations[currentLanguage][descKey];
+                        gameDescription.innerHTML = translatedDesc || game.description;
+                    } else {
+                        gameDescription.innerHTML = game.description;
+                    }
+                    
+                    gameLink.href = game.url;
+                    gameBg.style.backgroundImage = `url(${game.image})`;
+                    
+                    gameDetails.style.opacity = '1';
+                    gameDetails.style.transform = 'translateY(0)';
+                }, 300);
+            }
+        });
+        
+        // Enhanced hover effects
+        btn.addEventListener('mouseenter', () => {
+            if (!btn.classList.contains('active')) {
+                btn.style.transform = 'translateY(-3px)';
+                btn.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
+            }
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            if (!btn.classList.contains('active')) {
+                btn.style.transform = 'translateY(0)';
+                btn.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+            }
+        });
+    });
+}
 
 // Language selector functionality
 document.addEventListener('DOMContentLoaded', () => {
@@ -285,14 +314,11 @@ function resetToEnglish() {
     document.querySelector('[data-translate="Made with"]').textContent = 'Made with';
     document.querySelector('[data-translate="and love"]').textContent = 'and love';
     
-    // Reset hero quote and footer quote
-    const currentGame = document.querySelector('.game-nav-btn.active')?.getAttribute('data-game') || DEFAULT_GAME;
-    const game = games[currentGame];
-    if (game) {
+    // Reset hero quote (mas não muda mais dinamicamente)
+    const defaultGame = games[DEFAULT_GAME];
+    if (defaultGame) {
         const heroDescription = document.querySelector('.hero-description');
-        const footerQuote = document.querySelector('footer blockquote');
-        if (heroDescription) heroDescription.textContent = `"${game.quote}"`;
-        if (footerQuote) footerQuote.textContent = `"${game.quote}"`;
+        if (heroDescription) heroDescription.textContent = `"${defaultGame.quote}"`;
     }
 }
 
@@ -424,51 +450,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Enhanced hover effects for interactive elements
-gameNavBtns.forEach(btn => {
-    btn.addEventListener('mouseenter', () => {
-        if (!btn.classList.contains('active')) {
-            btn.style.transform = 'translateY(-3px)';
-            btn.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-        }
-    });
-    
-    btn.addEventListener('mouseleave', () => {
-        if (!btn.classList.contains('active')) {
-            btn.style.transform = 'translateY(0)';
-            btn.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
-        }
-    });
-});
-
-// Initialize the page
-document.addEventListener('DOMContentLoaded', () => {
-    // Set initial game content based on DEFAULT_GAME
-    const initialGame = games[DEFAULT_GAME];
-    if (initialGame) {
-        gameTitle.textContent = initialGame.title;
-        gameDescription.innerHTML = initialGame.description;
-        gameLink.href = initialGame.url;
-        gameBg.style.backgroundImage = `url(${initialGame.image})`;
-        
-        // Set active button for default game
-        gameNavBtns.forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.getAttribute('data-game') === DEFAULT_GAME) {
-                btn.classList.add('active');
-            }
-        });
-        
-        // Update hero content
-        updateHeroContent(DEFAULT_GAME);
-    }
-    
-    // Add initial animations
-    setTimeout(() => {
-        document.body.classList.add('loaded');
-    }, 200);
-});
-
 // Performance optimization: Throttle scroll events
 function throttle(func, wait) {
     let timeout;
@@ -518,4 +499,32 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('section').forEach(section => {
     sectionObserver.observe(section);
+});
+
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    // Gerar botões de jogos dinamicamente
+    generateGameButtons();
+    
+    // Inicializar hero com jogo padrão
+    initializeHero();
+    
+    // Set initial game content for games section
+    const initialGame = games[Object.keys(games)[0]]; // Primeiro jogo da lista
+    if (initialGame) {
+        const gameTitle = document.getElementById('game-title');
+        const gameDescription = document.getElementById('game-description');
+        const gameLink = document.getElementById('game-link');
+        const gameBg = document.getElementById('game-bg');
+        
+        if (gameTitle) gameTitle.textContent = initialGame.title;
+        if (gameDescription) gameDescription.innerHTML = initialGame.description;
+        if (gameLink) gameLink.href = initialGame.url;
+        if (gameBg) gameBg.style.backgroundImage = `url(${initialGame.image})`;
+    }
+    
+    // Add initial animations
+    setTimeout(() => {
+        document.body.classList.add('loaded');
+    }, 200);
 });
