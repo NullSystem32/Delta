@@ -28,10 +28,21 @@
         </div>
         
         <nav>
-            <a href="#home" class="nav-link active">MAIN</a>
-            <a href="#games" class="nav-link">GAMES</a>
-            <a href="#patreon" class="nav-link">PATREON</a>
-            <a href="#contact" class="nav-link">CONTACT</a>
+            <a href="#home" class="nav-link active" data-translate="MAIN">MAIN</a>
+            <a href="#games" class="nav-link" data-translate="GAMES">GAMES</a>
+            <a href="#patreon" class="nav-link" data-translate="PATREON">PATREON</a>
+            <a href="#contact" class="nav-link" data-translate="CONTACT">CONTACT</a>
+            
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <select id="language-select" class="language-select">
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="pt">🇧🇷 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="de">🇩🇪 DE</option>
+                </select>
+            </div>
         </nav>
     </header>
 
@@ -45,7 +56,7 @@
                 <p class="hero-description">"What's the first ever thing made? and if its made, its not the first."</p>
                 <a href="https://www.roblox.com/games/12816756411" target="_blank" class="play-button">
                     <span class="play-icon">▶</span>
-                    PLAY NOW
+                    <span data-translate="PLAY NOW">PLAY NOW</span>
                 </a>
             </div>
             <div class="hero-game-thumb">
@@ -56,7 +67,7 @@
 
     <!-- Games Section -->
     <section id="games" class="games-section">
-        <h2 class="section-title">OUR GAMES</h2>
+        <h2 class="section-title" data-translate="OUR GAMES">OUR GAMES</h2>
         
         <div class="games-nav">
             <button class="game-nav-btn active" data-game="prophetia">PROPHETIA</button>
@@ -70,7 +81,7 @@
                     <h3 id="game-title">PROPHETIA</h3>
                     <p id="game-description">Step into a forgotten world where gods are written, not born. In PROPHETIA, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.</p>
                     <a id="game-link" href="https://www.roblox.com/games/12816756411" target="_blank" class="game-button">
-                        PLAY
+                        <span data-translate="PLAY">PLAY</span>
                     </a>
                 </div>
             </div>
@@ -82,8 +93,8 @@
 
     <!-- Patreon Section -->
     <section id="patreon" class="patreon-section">
-        <h2 class="section-title">SUPPORT PROPHETIA DEVELOPMENT</h2>
-        <p class="section-description">Making such a complex game as <span class="glow">PROPHETIA</span> isn't cheap and easy.</p>
+        <h2 class="section-title" data-translate="SUPPORT PROPHETIA DEVELOPMENT">SUPPORT PROPHETIA DEVELOPMENT</h2>
+        <p class="section-description" data-translate="patreon_description">Making such a complex game as <span class="glow">PROPHETIA</span> isn't cheap and easy.</p>
         
         <div class="patreon-tiers">
             <div class="tier">
@@ -91,11 +102,11 @@
                 <h3>Lit</h3>
                 <div class="tier-price">$5<span>/month</span></div>
                 <ul>
-                    <li>Name in Credits</li>
-                    <li>Monthly Newsletter with Secrets and Curiosities</li>
-                    <li>Development Updates</li>
-                    <li>Discord Role</li>
-                    <li>Access to a VIP Supporters Category on Discord</li>
+                    <li data-translate="Name in Credits">Name in Credits</li>
+                    <li data-translate="Monthly Newsletter with Secrets and Curiosities">Monthly Newsletter with Secrets and Curiosities</li>
+                    <li data-translate="Development Updates">Development Updates</li>
+                    <li data-translate="Discord Role">Discord Role</li>
+                    <li data-translate="Access to a VIP Supporters Category on Discord">Access to a VIP Supporters Category on Discord</li>
                 </ul>
             </div>
             
@@ -104,13 +115,13 @@
                 <h3>Writter</h3>
                 <div class="tier-price">$10<span>/month</span></div>
                 <ul>
-                    <li>Early Access to Teasers</li>
-                    <li>Monthly Q&A Sessions</li>
-                    <li>Participation in Small Polls</li>
-                    <li>Early Access to Concept Art</li>
-                    <li>Increased Visibility When Sending Art/Concept Suggestions</li>
-                    <li>In-game Tag: "Above Us"</li>
-                    <li>all benefits from Tier 1 (Lit) and 2 (Messier)</li>
+                    <li data-translate="Early Access to Teasers">Early Access to Teasers</li>
+                    <li data-translate="Monthly Q&A Sessions">Monthly Q&A Sessions</li>
+                    <li data-translate="Participation in Small Polls">Participation in Small Polls</li>
+                    <li data-translate="Early Access to Concept Art">Early Access to Concept Art</li>
+                    <li data-translate="Increased Visibility When Sending Art/Concept Suggestions">Increased Visibility When Sending Art/Concept Suggestions</li>
+                    <li data-translate="In-game Tag: \"Above Us\"">In-game Tag: "Above Us"</li>
+                    <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit) and 2 (Messier)</li>
                 </ul>
             </div>
             
@@ -119,52 +130,52 @@
                 <h3>Messier</h3>
                 <div class="tier-price">$15<span>/month</span></div>
                 <ul>
-                    <li>all benefits from Tier 1 (Lit) and 2 (Messier)</li>
-                    <li>Participate in special raffles to help create new characters for the game.</li>
-                    <li>Join major polls that impact key development decisions.</li>
-                    <li>Access to Top-Secret Development Leaks</li>
-                    <li>Participation in Stages with Content Creators and High-Level Members</li>
-                    <li>Honored in the Patron Hall of Names</li>
-                    <li>Receive a special, backer-only item in the game</li>
-                    <li>Access a special in-game "party" for top supporters only.</li>
+                    <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit) and 2 (Messier)</li>
+                    <li data-translate="Participate in special raffles to help create new characters for the game.">Participate in special raffles to help create new characters for the game.</li>
+                    <li data-translate="Join major polls that impact key development decisions.">Join major polls that impact key development decisions.</li>
+                    <li data-translate="Access to Top-Secret Development Leaks">Access to Top-Secret Development Leaks</li>
+                    <li data-translate="Participation in Stages with Content Creators and High-Level Members">Participation in Stages with Content Creators and High-Level Members</li>
+                    <li data-translate="Honored in the Patron Hall of Names">Honored in the Patron Hall of Names</li>
+                    <li data-translate="Receive a special, backer-only item in the game">Receive a special, backer-only item in the game</li>
+                    <li data-translate="Access a special in-game \"party\" for top supporters only.">Access a special in-game "party" for top supporters only.</li>
                 </ul>
             </div>
         </div>
         
         <a href="https://www.patreon.com/c/PROPHETIA" target="_blank" class="patreon-button">
-            BE A PATREON
+            <span data-translate="BE A PATREON">BE A PATREON</span>
         </a>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
-        <h2 class="section-title">CONECT WITH US</h2>
-        <p class="section-description">Follow our socials for updates & announcements.</p>
+        <h2 class="section-title" data-translate="CONECT WITH US">CONECT WITH US</h2>
+        <p class="section-description" data-translate="contact_description">Follow our socials for updates & announcements.</p>
         
         <div class="social-grid">
             <a href="https://discord.gg/EAttXgZP8T" class="social-card">
                 <img src="srcs/Discord.png" class="social-icon">
-                <h3>Discord Server</h3>
+                <h3 data-translate="Discord Server">Discord Server</h3>
             </a>
             
             <a href="https://x.com/NullSystem32" class="social-card">
                 <img src="srcs/Twitter.png" class="social-icon">
-                <h3>Null (Scripter) Twitter</h3>
+                <h3 data-translate="Null (Scripter) Twitter">Null (Scripter) Twitter</h3>
             </a>
 
             <a href="https://x.com/DaniPurberry" class="social-card">
                 <img src="srcs/Twitter.png" class="social-icon">
-                <h3>Dan (Animator) Twitter</h3>
+                <h3 data-translate="Dan (Animator) Twitter">Dan (Animator) Twitter</h3>
             </a>
             
             <a href="https://gamejolt.com/@NullSystem32" class="social-card">
                 <img src="srcs/Gamejolt.png" class="social-icon">
-                <h3>GameJolt</h3>
+                <h3 data-translate="GameJolt">GameJolt</h3>
             </a>
             
             <a href="https://www.roblox.com/communities/17249991/FOX-Games-Group" class="social-card">
                 <img src="srcs/Roblox.png" class="social-icon">
-                <h3>Roblox Group</h3>
+                <h3 data-translate="Roblox Group">Roblox Group</h3>
             </a>
         </div>
     </section>
@@ -183,8 +194,8 @@
 
             <p class="copyright">© 2023 DELTA. All rights reserved.</p>
             <p class="made-with">
-  Made with <img src="srcs/Triangle.png" class="glow" alt="Triangle Logo" style="width:20px; height:20px; vertical-align:middle;"> and love
-</p>
+                <span data-translate="Made with">Made with</span> <img src="srcs/Triangle.png" class="glow" alt="Triangle Logo" style="width:20px; height:20px; vertical-align:middle;"> <span data-translate="and love">and love</span>
+            </p>
 
         </div>
     </footer>
@@ -199,6 +210,7 @@
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

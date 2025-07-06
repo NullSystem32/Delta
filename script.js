@@ -119,7 +119,17 @@ gameNavBtns.forEach(btn => {
             
             setTimeout(() => {
                 gameTitle.textContent = game.title;
-                gameDescription.innerHTML = game.description;
+                
+                // Check if we need to translate the description
+                const currentLanguage = document.getElementById('language-select').value;
+                if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
+                    const descKey = gameId + '_desc';
+                    const translatedDesc = window.translations[currentLanguage][descKey];
+                    gameDescription.innerHTML = translatedDesc || game.description;
+                } else {
+                    gameDescription.innerHTML = game.description;
+                }
+                
                 gameLink.href = game.url;
                 gameBg.style.backgroundImage = `url(${game.image})`;
                 
@@ -128,6 +138,26 @@ gameNavBtns.forEach(btn => {
             }, 300);
         }
     });
+});
+
+// Language selector functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const languageSelect = document.getElementById('language-select');
+    
+    if (languageSelect) {
+        languageSelect.addEventListener('change', (e) => {
+            const selectedLanguage = e.target.value;
+            if (selectedLanguage === 'en') {
+                // Reset to original English content
+                location.reload();
+            } else {
+                window.translateContent(selectedLanguage);
+            }
+        });
+    }
+    
+    // Load saved language
+    window.loadSavedLanguage();
 });
 
 // Easter egg functionality
