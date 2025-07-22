@@ -1,5 +1,5 @@
 // Configuração do jogo inicial (pode ser alterado aqui)
-const DEFAULT_GAME = 'prophetia'; // Opções: 'prophetia', 'reality-traveler', 'blox'
+const DEFAULT_GAME = 'messier-society'; // Opções: 'prophetia', 'reality-traveler', 'blox'
 
 // Game data com frases incluídas
 const games = {
@@ -27,6 +27,15 @@ const games = {
         thumbnail: 'srcs/Blox_Thumbnail.png',
         quote: "Every creation starts with a single block."
     },
+    /*
+    'messier-society': {
+        title: 'Messier Society',
+        description: "Awaken in the depths. Explore the unknown. Survive what's left.",
+        url: 'https://www.roblox.com/games/15826904367',
+        image: 'srcs/Blox_Icon.png',
+        thumbnail: 'srcs/Blox_Thumbnail.png',
+        quote: "Some awakenings feel like endings."
+    }, */
 };
 
 // Loading screen
