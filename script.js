@@ -1,5 +1,5 @@
 // Configuração do jogo inicial (pode ser alterado aqui)
-const DEFAULT_GAME = 'messier-society'; // Opções: 'prophetia', 'reality-traveler', 'blox'
+const DEFAULT_GAME = 'prophetia'; // Opções: 'prophetia', 'reality-traveler', 'blox'
 
 // Game data com frases incluídas
 const games = {
