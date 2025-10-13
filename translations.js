@@ -19,11 +19,6 @@ const translations = {
         'reality_traveler_desc': 'Um prólogo curto e misterioso para <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler te coloca em um espaço silencioso entre mundos, armado apenas com pensamento e visão. Não é sobre o que você faz, mas o que você percebe. Olhe atentamente—sua história já começou.',
         'blox_desc': 'Construa com blocos.<br>Pinte, conecte e energize-os.<br>Crie qualquer coisa desde estruturas simples até máquinas complexas em uma sandbox totalmente interativa.',
         
-        // Game Quotes
-        'prophetia_quote': 'Qual é a primeira coisa já feita? E se foi feita, não é a primeira.',
-        'reality_traveler_quote': 'Entre mundos, apenas o silêncio fala a verdade.',
-        'blox_quote': 'Toda criação começa com um único bloco.',
-        
         // Patreon Section
         'SUPPORT PROPHETIA DEVELOPMENT': 'APOIE O DESENVOLVIMENTO DE <span class="prophetia">PROPHETIA</span>',
         'patreon_description': 'Fazer um jogo tão complexo como <span class="glow"><span class="prophetia">PROPHETIA</span></span> não é barato nem fácil.',
@@ -83,11 +78,6 @@ const translations = {
         'prophetia_desc': 'Entra en un mundo olvidado donde los dioses son escritos, no nacidos.<br>En <span class="prophetia">PROPHETIA</span>, eres un viajero solitario en una vasta realidad surrealista moldeada por historias abandonadas hace mucho tiempo. Explora reinos rotos, descubre memorias perdidas y arma la verdad detrás de una creación divina perdida en el tiempo. El mundo no espera héroes—solo aquellos que hacen las preguntas correctas.',
         'reality_traveler_desc': 'Un prólogo corto y misterioso para <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler te coloca en un espacio silencioso entre mundos, armado solo con pensamiento y visión. No se trata de lo que haces, sino de lo que notas. Mira atentamente—tu historia ya ha comenzado.',
         'blox_desc': 'Construye con bloques.<br>Píntalos, conéctalos y energízalos.<br>Crea cualquier cosa desde estructuras simples hasta máquinas complejas en un sandbox completamente interactivo.',
-        
-        // Game Quotes
-        'prophetia_quote': '¿Cuál es la primera cosa jamás hecha? Y si está hecha, no es la primera.',
-        'reality_traveler_quote': 'Entre mundos, solo el silencio dice la verdad.',
-        'blox_quote': 'Toda creación comienza con un solo bloque.',
         
         // Patreon Section
         'SUPPORT PROPHETIA DEVELOPMENT': 'APOYA EL DESARROLLO DE <span class="prophetia">PROPHETIA</span>',
@@ -149,11 +139,6 @@ const translations = {
         'reality_traveler_desc': 'Un prologue court et mystérieux pour <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler vous place dans un espace silencieux entre les mondes, armé seulement de pensée et de vision. Il ne s\'agit pas de ce que vous faites, mais de ce que vous remarquez. Regardez attentivement—votre histoire a déjà commencé.',
         'blox_desc': 'Construisez avec des blocs.<br>Peignez-les, connectez-les et alimentez-les.<br>Créez n\'importe quoi depuis des structures simples jusqu\'aux machines complexes dans un bac à sable entièrement interactif.',
         
-        // Game Quotes
-        'prophetia_quote': 'Quelle est la première chose jamais faite ? Et si elle est faite, ce n\'est pas la première.',
-        'reality_traveler_quote': 'Entre les mondes, seul le silence dit la vérité.',
-        'blox_quote': 'Toute création commence par un seul bloc.',
-        
         // Patreon Section
         'SUPPORT PROPHETIA DEVELOPMENT': 'SOUTENEZ LE DÉVELOPPEMENT DE <span class="prophetia">PROPHETIA</span>',
         'patreon_description': 'Faire un jeu aussi complexe que <span class="prophetia">PROPHETIA</span> n\'est ni bon marché ni facile.',
@@ -213,11 +198,6 @@ const translations = {
         'prophetia_desc': 'Betreten Sie eine vergessene Welt, in der Götter geschrieben, nicht geboren werden.<br>In <span class="prophetia">PROPHETIA</span> sind Sie ein einsamer Reisender in einer weiten, surrealen Realität, die von längst verlassenen Geschichten geprägt ist. Erkunden Sie zerbrochene Reiche, entdecken Sie verlorene Erinnerungen und setzen Sie die Wahrheit hinter einer göttlichen Schöpfung zusammen, die in der Zeit verloren ging. Die Welt wartet nicht auf Helden—nur auf diejenigen, die die richtigen Fragen stellen.',
         'reality_traveler_desc': 'Ein kurzer, mysteriöser Prolog zu <span class="prophetia">PROPHETIA</span>.<br>Reality Traveler versetzt Sie in einen stillen Raum zwischen den Welten, bewaffnet nur mit Gedanken und Vision. Es geht nicht darum, was Sie tun, sondern was Sie bemerken. Schauen Sie genau hin—Ihre Geschichte hat bereits begonnen.',
         'blox_desc': 'Bauen Sie mit Blöcken.<br>Bemalen, verbinden und versorgen Sie sie mit Energie.<br>Erstellen Sie alles von einfachen Strukturen bis hin zu komplexen Maschinen in einer vollständig interaktiven Sandbox.',
-        
-        // Game Quotes
-        'prophetia_quote': 'Was ist das erste, was jemals gemacht wurde? Und wenn es gemacht ist, ist es nicht das erste.',
-        'reality_traveler_quote': 'Zwischen den Welten spricht nur die Stille die Wahrheit.',
-        'blox_quote': 'Jede Schöpfung beginnt mit einem einzigen Block.',
         
         // Patreon Section
         'SUPPORT PROPHETIA DEVELOPMENT': 'UNTERSTÜTZEN SIE DIE ENTWICKLUNG VON <span class="prophetia">PROPHETIA</span>',

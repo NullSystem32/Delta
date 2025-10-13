@@ -900,6 +900,379 @@ text-shadow:
   filter: drop-shadow(0 0 6px rgb(255, 149, 0));
 }
 
+.background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23000000" width="1920" height="1080"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .vignette {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.8) 100%);
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .header h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 4em;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            letter-spacing: 3px;
+        }
+        
+        .header .divider {
+            width: 300px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #fff, transparent);
+            margin: 20px auto;
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.5;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                opacity: 1;
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+            }
+        }
+        
+        .header .subtitle {
+            font-size: 2em;
+            color: #a0a0a0;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            animation: fadeIn 1.2s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .services-section {
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .service-item {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .service-item:hover::before {
+            left: 100%;
+        }
+        
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-left-color: #fff;
+            transform: translateX(10px);
+            box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
+        }
+        
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+        
+        .service-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8em;
+            color: #fff;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .service-price {
+            font-size: 1.6em;
+            color: #fff;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        
+        .service-robux {
+            font-size: 1.1em;
+            color: #888;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        .about-section {
+            animation: slideInRight 1s ease-out 0.5s both;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .about-content {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 40px;
+        }
+        
+        .about-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .about-text {
+            font-size: 1.15em;
+            color: #c0c0c0;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .projects {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .projects-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.4em;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .project {
+            margin-bottom: 15px;
+        }
+        
+        .project-name {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.1em;
+        }
+        
+        .project-desc {
+            color: #a0a0a0;
+            font-style: italic;
+            margin-top: 5px;
+        }
+        
+        .portfolio-link {
+            display: block;
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .why-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .why-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3em;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        
+        .why-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .why-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        
+        .why-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 80px;
+            padding: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1.5s ease-out 1s both;
+        }
+        
+        .footer-note {
+            font-size: 1.1em;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .languages {
+            font-size: 1.3em;
+            color: #fff;
+            letter-spacing: 3px;
+            font-family: 'Cinzel', serif;
+        }
+        
+        @media (max-width: 1200px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .about-content {
+                position: relative;
+                top: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.5em;
+            }
+            
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .service-name {
+                font-size: 1.4em;
+                margin-bottom: 10px;
+            }
+            
+            .service-price {
+                font-size: 1.3em;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
 /* Animations */
 
 @keyframes glowPulse {
