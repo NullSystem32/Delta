@@ -237,11 +237,19 @@ nav {
 }
 
 
+.pricelist-section {
+    min-height: 100vh;
+    padding: 8rem 3rem;
+    position: relative;
+    background: url("srcs/PROPHETIA_Thumbnail.png") center/cover no-repeat;
+}
+
 .pricelist-gradient {
     position: absolute;
     inset: 0;
-    background: linear-gradient( rgba(10,10,10, 1) 0%, rgba(10,10,10, 0) 10%, rgba(10,10,10, 1) 90%,rgba(10,10,10, 1) 100%);
-    z-index: -1;
+    background: linear-gradient(rgba(10,10,10, 1) 0%, rgba(10,10,10, 0) 10%, rgba(10,10,10, 0.8) 50%, rgba(10,10,10, 1) 100%);
+    z-index: 1;
+    pointer-events: none;
 }
 .hero-content {
     position: relative;
@@ -907,361 +915,276 @@ text-shadow:
   filter: drop-shadow(0 0 6px rgb(255, 149, 0));
 }
 
-.background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.15;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23000000" width="1920" height="1080"/></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .pricelist-container {
-            background: url("srcs/PROPHETIA_Thumbnail.png") center/cover no-repeat;
+.pricelist-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
+.section-subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: -3rem;
+    margin-bottom: 4rem;
+    letter-spacing: 0.1em;
+}
 
-            position: relative;
-            z-index: 2;
-            width: 100vw;
-            height: 100dvh;
-            margin: 0;
-            padding: 40px 20px;
-            
-            justify-content: flex-start;
-            align-items: stretch;
-            box-sizing: border-box;
-            
-        }
+.pricelist-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
         
-        .header {
-            text-align: center;
-            margin-bottom: 60px;
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .header h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 4em;
-            margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            letter-spacing: 3px;
-        }
+.services-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
         
         
+.service-item {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.service-item:hover::before {
+    left: 100%;
+}
+
+.service-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.service-name {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.service-price {
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.service-robux {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+.about-column {
+    display: flex;
+    flex-direction: column;
+}
         
-        @keyframes glow {
-            0%, 100% {
-                opacity: 0.5;
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-            50% {
-                opacity: 1;
-                box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
-            }
-        }
-        
-        .header .subtitle {
-            font-size: 2em;
-            color: #a0a0a0;
-            font-style: italic;
-            letter-spacing: 2px;
-        }
-        
-        .pricelist-main-content {
-            text-align: center;
-            
-            
-            animation: fadeIn 1.2s ease-out 0.3s both;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        .services-section {
-            animation: slideInLeft 1s ease-out 0.5s both;
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .service-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 30px;
-            margin-bottom: 25px;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .service-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.6s ease;
-        }
-        
-        .service-item:hover::before {
-            left: 100%;
-        }
-        
-        .service-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-        }
-        
-        .service-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-        }
-        
-        .service-name {
-            font-family: 'Cinzel', serif;
-            font-size: 1.8em;
-            color: #fff;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
-        }
-        
-        .service-price {
-            font-size: 1.6em;
-            color: #fff;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-        
-        .service-robux {
-            font-size: 1.1em;
-            color: #888;
-            margin-bottom: 12px;
-            font-style: italic;
-        }
-        
-        .about-section {
-            animation: slideInRight 1s ease-out 0.5s both;
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        .about-content {
-            background: rgba(255, 255, 255, 0);
-            padding: 40px;
-            position: sticky;
-            top: 40px;
-        }
-        
-        .about-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2em;
-            color: #fff;
-            margin-bottom: 25px;
-            text-align: center;
-            text-shadow: 0 2px 10px rgba(255, 255, 255, 0.3);
-        }
-        
-        .about-text {
-            font-size: 1.15em;
-            color: #c0c0c0;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .projects {
-            margin: 30px 0;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .projects-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.4em;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        
-        .project {
-            margin-bottom: 15px;
-        }
-        
-        .project-name {
-            font-weight: 600;
-            color: #fff;
-            font-size: 1.1em;
-        }
-        
-        .project-desc {
-            color: #a0a0a0;
-            font-style: italic;
-            margin-top: 5px;
-        }
-        
-        .portfolio-link {
-            display: block;
-            text-align: center;
-            margin: 25px 0;
-            padding: 15px 30px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.2em;
-            font-family: 'Cinzel', serif;
-            letter-spacing: 1px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .portfolio-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: #fff;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        .why-section {
-            margin-top: 30px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .why-title {
-            font-family: 'Cinzel', serif;
-            font-size: 1.3em;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        
-        .why-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .why-list li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #b0b0b0;
-            line-height: 1.6;
-        }
-        
-        .why-list li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #fff;
-            font-weight: bold;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 80px;
-            padding: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 1.5s ease-out 1s both;
-        }
-        
-        .footer-note {
-            font-size: 1.1em;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .languages {
-            font-size: 1.3em;
-            color: #fff;
-            letter-spacing: 3px;
-            font-family: 'Cinzel', serif;
-        }
-        
-        @media (max-width: 1200px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .about-content {
-                position: relative;
-                top: 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
-            }
-            
-            .header .subtitle {
-                font-size: 1.5em;
-            }
-            
-            .service-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .service-name {
-                font-size: 1.4em;
-                margin-bottom: 10px;
-            }
-            
-            .service-price {
-                font-size: 1.3em;
-            }
-        }
+.about-content {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+.about-title {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    text-align: left;
+    font-weight: 300;
+}
+
+.projects {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+
+.projects-title {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.project {
+    margin-bottom: 1rem;
+}
+
+.project-name {
+    font-weight: 500;
+    color: #fff;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.portfolio-link {
+    display: block;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.portfolio-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    text-shadow:
+        0 0 5px rgb(255,255,255),
+        0 0 10px rgb(255,255,255),
+        0 0 20px rgb(255,255,255),
+        0 0 40px rgb(255,255,255);
+}
+
+.why-section {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.why-title {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.why-list {
+    list-style: none;
+    padding: 0;
+}
+
+.why-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+.why-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.pricelist-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-note {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.languages {
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.2em;
+    font-weight: 300;
+}
+
+@media (max-width: 1200px) {
+    .pricelist-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricelist-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .service-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .service-name {
+        font-size: 1.1rem;
+    }
+
+    .service-price {
+        font-size: 1rem;
+    }
+
+    .about-content {
+        padding: 1.5rem;
+    }
+}
         
         .pulse {
             animation: pulse 2s ease-in-out infinite;

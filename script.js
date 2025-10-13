@@ -74,7 +74,7 @@ window.addEventListener('scroll', () => {
 
 // Navigation
 function updateActiveNavLink() {
-    const sections = ['home', 'games', 'patreon', 'contact'];
+    const sections = ['home', 'games', 'pricelist', 'patreon', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     
     let currentSection = 'home';
@@ -260,6 +260,7 @@ function resetToEnglish() {
     // Reset navigation
     document.querySelector('[data-translate="MAIN"]').textContent = 'MAIN';
     document.querySelector('[data-translate="GAMES"]').textContent = 'GAMES';
+    document.querySelector('[data-translate="PRICELIST"]').textContent = 'PRICELIST';
     document.querySelector('[data-translate="PATREON"]').textContent = 'PATREON';
     document.querySelector('[data-translate="CONTACT"]').textContent = 'CONTACT';
     
