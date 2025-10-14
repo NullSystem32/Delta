@@ -11,6 +11,7 @@ const games = {
         thumbnail: 'srcs/PROPHETIA_Thumbnail.png',
         quote: "What's the first ever thing made? and if its made, its not the first."
     },
+
     'reality-traveler': {
         title: 'Reality Traveler',
         description: "A short, mysterious prologue to <span class='prophetia'>PROPHETIA</span>.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
@@ -19,6 +20,16 @@ const games = {
         thumbnail: 'srcs/RealityTraveler_Thumbnail.png',
         quote: "Between worlds, only silence speaks the truth."
     },
+
+    'messier-society': {
+        title: 'Messier Society',
+        description: "Awaken in the depths. Explore the unknown. Survive what's left.",
+        url: 'https://www.roblox.com/games/15826904367',
+        image: 'srcs/MS_Icon.png',
+        thumbnail: 'srcs/MS_Thumbnail.png',
+        quote: "Some awakenings feel like endings."
+    },
+
     'blox': {
         title: 'Blox!',
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
@@ -27,15 +38,12 @@ const games = {
         thumbnail: 'srcs/Blox_Thumbnail.png',
         quote: "Every creation starts with a single block."
     },
+
     /*
-    'messier-society': {
-        title: 'Messier Society',
-        description: "Awaken in the depths. Explore the unknown. Survive what's left.",
-        url: 'https://www.roblox.com/games/15826904367',
-        image: 'srcs/Blox_Icon.png',
-        thumbnail: 'srcs/Blox_Thumbnail.png',
-        quote: "Some awakenings feel like endings."
-    }, */
+    
+
+
+    */
 };
 
 // Loading screen
@@ -260,7 +268,6 @@ function resetToEnglish() {
     // Reset navigation
     document.querySelector('[data-translate="MAIN"]').textContent = 'MAIN';
     document.querySelector('[data-translate="GAMES"]').textContent = 'GAMES';
-    document.querySelector('[data-translate="PRICELIST"]').textContent = 'PRICELIST';
     document.querySelector('[data-translate="PATREON"]').textContent = 'PATREON';
     document.querySelector('[data-translate="CONTACT"]').textContent = 'CONTACT';
     

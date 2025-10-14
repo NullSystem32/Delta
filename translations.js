@@ -4,7 +4,6 @@ const translations = {
         // Header
         'MAIN': 'INÍCIO',
         'GAMES': 'JOGOS',
-        'PRICELIST': 'PREÇOS',
         'PATREON': 'PATREON',
         'CONTACT': 'CONTATO',
         
@@ -58,47 +57,13 @@ const translations = {
         // Footer
         'Closer than you think': 'Mais perto do que você pensa',
         'Made with': 'Feito com',
-        'and love': 'e amor',
-
-        // Pricelist
-        'pricelist_title': 'TABELA DE PREÇOS DO NULL',
-        'pricelist_subtitle': 'Programação',
-        'service_bug_hunt': 'Caça de Bugs',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
-        'service_quick_script': 'Script Rápido',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
-        'service_feature_addition': 'Adição de Funcionalidade',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
-        'service_entire_system': 'Sistema Completo',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
-        'service_weekly_help': 'Ajuda Semanal',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
-        'service_technical_consultation': 'Consultoria Técnica',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/hora)',
-        'pricelist_hello': 'Olá! Eu sou Null.',
-        'pricelist_intro': 'Trabalho com programação Roblox há três anos! Durante esse tempo, aprendi a escrever código limpo, rápido e eficiente — fácil de manter e expandir.',
-        'pricelist_prophetia_text': 'Atualmente estou desenvolvendo um jogo de RPG chamado PROPHETIA. Para custear ajuda no projeto, comecei a oferecer comissões de programação. Também percebi que vou precisar de um grande orçamento só para patrocinar meu jogo no Roblox para que as pessoas possam realmente encontrá-lo. (Sim, Grow a Garden não conseguiu 15M de jogadores porque é bom.)',
-        'pricelist_current_projects': 'Projetos Atuais:',
-        'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'apresenta um mistério estranho sobre a origem de duas pessoas no universo de PROPHETIA.',
-        'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'é um spin-off ambientado em um laboratório de ficção científica bizarro onde você deve descobrir o que está acontecendo e, mais importante — escapar. (Messier Society ainda está em progresso.)',
-        'pricelist_view_portfolio': 'Ver Site do Portfólio',
-        'pricelist_why_prices': 'Por Que Esses Preços?',
-        'pricelist_reason_1': '3 anos de experiência ativa em desenvolvimento',
-        'pricelist_reason_2': 'Código limpo e documentado seguindo as melhores práticas',
-        'pricelist_reason_3': 'Projetos ativos demonstrando expertise real',
-        'pricelist_reason_4': 'Tempos de resposta rápidos e comunicação clara',
-        'pricelist_reason_5': 'Testes minuciosos antes da entrega',
-        'pricelist_reason_6': 'Suporte pós-entrega incluído',
-        'pricelist_footer_note': '(Preços em USD/EUR. Pagamentos apenas com PayPal ou Robux)'
+        'and love': 'e amor'
     },
     
     'es': {
         // Header
         'MAIN': 'INICIO',
         'GAMES': 'JUEGOS',
-        'PRICELIST': 'PRECIOS',
         'PATREON': 'PATREON',
         'CONTACT': 'CONTACTO',
         
@@ -152,47 +117,13 @@ const translations = {
         // Footer
         'Closer than you think': 'Más cerca de lo que piensas',
         'Made with': 'Hecho con',
-        'and love': 'y amor',
-
-        // Pricelist
-        'pricelist_title': 'TABLA DE PRECIOS DE NULL',
-        'pricelist_subtitle': 'Programación',
-        'service_bug_hunt': 'Caza de Errores',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
-        'service_quick_script': 'Script Rápido',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
-        'service_feature_addition': 'Adición de Funcionalidad',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
-        'service_entire_system': 'Sistema Completo',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
-        'service_weekly_help': 'Ayuda Semanal',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
-        'service_technical_consultation': 'Consultoría Técnica',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/hora)',
-        'pricelist_hello': '¡Hola! Soy Null.',
-        'pricelist_intro': '¡He estado trabajando con programación de Roblox durante tres años! Durante este tiempo, he aprendido a escribir código limpio, rápido y eficiente — fácil de mantener y expandir.',
-        'pricelist_prophetia_text': 'Actualmente estoy desarrollando un juego de RPG llamado PROPHETIA. Para costear ayuda con el proyecto, he comenzado a ofrecer comisiones de programación. También me di cuenta de que necesitaré un gran presupuesto solo para patrocinar mi juego en Roblox para que la gente pueda encontrarlo. (Sí, Grow a Garden no obtuvo 15M de jugadores porque sea bueno.)',
-        'pricelist_current_projects': 'Proyectos Actuales:',
-        'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'presenta un misterio extraño sobre el origen de dos personas en el universo de PROPHETIA.',
-        'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'es un spin-off ambientado en un laboratorio de ciencia ficción extraño donde debes descubrir qué está sucediendo y, lo más importante, escapar. (Messier Society aún está en progreso.)',
-        'pricelist_view_portfolio': 'Ver Sitio Web del Portafolio',
-        'pricelist_why_prices': '¿Por Qué Estos Precios?',
-        'pricelist_reason_1': '3 años de experiencia activa en desarrollo',
-        'pricelist_reason_2': 'Código limpio y documentado siguiendo las mejores prácticas',
-        'pricelist_reason_3': 'Proyectos activos demostrando experiencia real',
-        'pricelist_reason_4': 'Tiempos de respuesta rápidos y comunicación clara',
-        'pricelist_reason_5': 'Pruebas exhaustivas antes de la entrega',
-        'pricelist_reason_6': 'Soporte post-entrega incluido',
-        'pricelist_footer_note': '(Precios en USD/EUR. Pagos solo con PayPal o Robux)'
+        'and love': 'y amor'
     },
     
     'fr': {
         // Header
         'MAIN': 'ACCUEIL',
         'GAMES': 'JEUX',
-        'PRICELIST': 'PRIX',
         'PATREON': 'PATREON',
         'CONTACT': 'CONTACT',
         
@@ -246,47 +177,13 @@ const translations = {
         // Footer
         'Closer than you think': 'Plus proche que vous ne le pensez',
         'Made with': 'Fait avec',
-        'and love': 'et amour',
-
-        // Pricelist
-        'pricelist_title': 'LISTE DE PRIX DE NULL',
-        'pricelist_subtitle': 'Programmation',
-        'service_bug_hunt': 'Chasse aux Bugs',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
-        'service_quick_script': 'Script Rapide',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
-        'service_feature_addition': 'Ajout de Fonctionnalité',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
-        'service_entire_system': 'Système Complet',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
-        'service_weekly_help': 'Aide Hebdomadaire',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
-        'service_technical_consultation': 'Consultation Technique',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/heure)',
-        'pricelist_hello': 'Salut! Je suis Null.',
-        'pricelist_intro': 'Je travaille avec la programmation Roblox depuis trois ans! Pendant ce temps, j\'ai appris à écrire du code propre, rapide et efficace — facile à maintenir et à développer.',
-        'pricelist_prophetia_text': 'Je développe actuellement un jeu RPG appelé PROPHETIA. Pour financer l\'aide sur le projet, j\'ai commencé à proposer des commissions de programmation. J\'ai également réalisé que j\'aurais besoin d\'un gros budget juste pour parrainer mon jeu sur Roblox afin que les gens puissent vraiment le trouver. (Oui, Grow a Garden n\'a pas obtenu 15M de joueurs parce qu\'il est bon.)',
-        'pricelist_current_projects': 'Projets Actuels:',
-        'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'présente un mystère étrange sur l\'origine de deux personnes dans l\'univers de PROPHETIA.',
-        'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'est un spin-off situé dans un laboratoire de science-fiction bizarre où vous devez découvrir ce qui se passe et surtout — vous échapper. (Messier Society est encore en cours.)',
-        'pricelist_view_portfolio': 'Voir le Site Web du Portfolio',
-        'pricelist_why_prices': 'Pourquoi Ces Prix?',
-        'pricelist_reason_1': '3 ans d\'expérience active en développement',
-        'pricelist_reason_2': 'Code propre et documenté suivant les meilleures pratiques',
-        'pricelist_reason_3': 'Projets actifs démontrant une expertise réelle',
-        'pricelist_reason_4': 'Temps de réponse rapides et communication claire',
-        'pricelist_reason_5': 'Tests approfondis avant la livraison',
-        'pricelist_reason_6': 'Support après livraison inclus',
-        'pricelist_footer_note': '(Prix en USD/EUR. Paiements uniquement avec PayPal ou Robux)'
+        'and love': 'et amour'
     },
     
     'de': {
         // Header
         'MAIN': 'HAUPTSEITE',
         'GAMES': 'SPIELE',
-        'PRICELIST': 'PREISE',
         'PATREON': 'PATREON',
         'CONTACT': 'KONTAKT',
         
@@ -340,40 +237,7 @@ const translations = {
         // Footer
         'Closer than you think': 'Näher als du denkst',
         'Made with': 'Gemacht mit',
-        'and love': 'und Liebe',
-
-        // Pricelist
-        'pricelist_title': 'NULLS PREISLISTE',
-        'pricelist_subtitle': 'Programmierung',
-        'service_bug_hunt': 'Fehlersuche',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
-        'service_quick_script': 'Schnelles Skript',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
-        'service_feature_addition': 'Funktionserweiterung',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
-        'service_entire_system': 'Gesamtsystem',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
-        'service_weekly_help': 'Wöchentliche Hilfe',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
-        'service_technical_consultation': 'Technische Beratung',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/Stunde)',
-        'pricelist_hello': 'Hallo! Ich bin Null.',
-        'pricelist_intro': 'Ich arbeite seit drei Jahren mit Roblox-Programmierung! In dieser Zeit habe ich gelernt, sauberen, schnellen und effizienten Code zu schreiben — einfach zu warten und zu erweitern.',
-        'pricelist_prophetia_text': 'Ich entwickle derzeit ein RPG-Spiel namens PROPHETIA. Um Hilfe für das Projekt zu finanzieren, habe ich begonnen, Programmierungsaufträge anzubieten. Ich habe auch erkannt, dass ich ein großes Budget benötige, nur um mein Spiel auf Roblox zu sponsern, damit die Leute es tatsächlich finden können. (Ja, Grow a Garden hat keine 15M Spieler bekommen, weil es gut ist.)',
-        'pricelist_current_projects': 'Aktuelle Projekte:',
-        'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'präsentiert ein seltsames Mysterium über den Ursprung von zwei Personen im PROPHETIA-Universum.',
-        'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'ist ein Spin-off, das in einem bizarren Science-Fiction-Labor spielt, wo Sie herausfinden müssen, was passiert und am wichtigsten — entkommen. (Messier Society ist noch in Arbeit.)',
-        'pricelist_view_portfolio': 'Portfolio-Website Ansehen',
-        'pricelist_why_prices': 'Warum Diese Preise?',
-        'pricelist_reason_1': '3 Jahre aktive Entwicklungserfahrung',
-        'pricelist_reason_2': 'Sauberer, dokumentierter Code nach Best Practices',
-        'pricelist_reason_3': 'Aktive Projekte, die echte Expertise demonstrieren',
-        'pricelist_reason_4': 'Schnelle Reaktionszeiten und klare Kommunikation',
-        'pricelist_reason_5': 'Gründliche Tests vor der Lieferung',
-        'pricelist_reason_6': 'Support nach der Lieferung inbegriffen',
-        'pricelist_footer_note': '(Preise in USD/EUR. Zahlungen nur mit PayPal oder Robux)'
+        'and love': 'und Liebe'
     }
 };
 
