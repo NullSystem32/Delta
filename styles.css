@@ -932,11 +932,17 @@ text-shadow:
     letter-spacing: 0.1em;
 }
 
-.services-grid {
+.pricelist-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     margin-bottom: 3rem;
+}
+        
+.services-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
         
         
@@ -999,109 +1005,54 @@ text-shadow:
     font-style: italic;
 }
 
-/* About Section */
-.about-section {
-    min-height: 100vh;
-    padding: 8rem 3rem;
-    position: relative;
-    background: rgba(17,17,17, 1);
-}
-
-.about-section-gradient {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(17,17,17, 1) 0%, rgba(17,17,17, 0.95) 50%, rgba(17,17,17, 1) 100%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.about-section-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
-
-.about-layout {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    gap: 4rem;
-    align-items: start;
-    margin-top: 4rem;
-}
-
-.about-image-container {
-    position: sticky;
-    top: 120px;
-}
-
-.about-image-placeholder {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+.about-column {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease;
-    overflow: hidden;
+    flex-direction: column;
 }
-
-.about-image-placeholder:hover {
-    border-color: rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.image-placeholder-text {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.4);
-    font-weight: 300;
-    letter-spacing: 0.05em;
-}
-
-.about-bio {
+        
+.about-content {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    padding: 3rem;
+    border-radius: 16px;
+    padding: 2.5rem;
 }
 
-.about-greeting {
-    font-size: 2.2rem;
+.about-title {
+    font-size: 1.8rem;
     color: #fff;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
     font-weight: 400;
     letter-spacing: 0.02em;
 }
 
 .about-text {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.75);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    text-align: left;
     font-weight: 300;
 }
 
 .projects {
-    margin: 2rem 0;
-    padding: 2rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
     background: rgba(255, 255, 255, 0.05);
-    border-left: 3px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
 }
 
 .projects-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #fff;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
     font-weight: 500;
 }
 
 .project {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .project-name {
@@ -1112,9 +1063,10 @@ text-shadow:
 }
 
 .project-desc {
-    font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7;
+    font-style: italic;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 .portfolio-link {
@@ -1145,22 +1097,18 @@ text-shadow:
 }
 
 .why-section {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 2.5rem;
-    max-width: 900px;
-    margin: 0 auto;
+    border-radius: 8px;
 }
 
 .why-title {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     color: #fff;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 .why-list {
@@ -1169,17 +1117,17 @@ text-shadow:
 }
 
 .why-list li {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.75);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 0.95rem;
     font-weight: 300;
 }
 
 .why-list li::before {
-    content: '→';
+    content: "→";
     position: absolute;
     left: 0;
     color: #fff;
@@ -1188,9 +1136,7 @@ text-shadow:
 
 .pricelist-footer {
     text-align: center;
-    margin-top: 3rem;
     padding: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-note {
@@ -1208,24 +1154,9 @@ text-shadow:
 }
 
 @media (max-width: 1200px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .about-layout {
+    .pricelist-layout {
         grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .about-image-container {
-        position: relative;
-        top: 0;
-    }
-
-    .about-image-placeholder {
-        max-width: 400px;
-        margin: 0 auto;
     }
 }
 
@@ -1248,16 +1179,8 @@ text-shadow:
         font-size: 1rem;
     }
 
-    .about-bio {
-        padding: 2rem;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-section {
-        padding: 2rem;
+    .about-content {
+        padding: 1.5rem;
     }
 }
         

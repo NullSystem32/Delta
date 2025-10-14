@@ -30,7 +30,6 @@
         <nav>
             <a href="#home" class="nav-link active" data-translate="MAIN">MAIN</a>
             <a href="#games" class="nav-link" data-translate="GAMES">GAMES</a>
-            <a href="#about" class="nav-link" data-translate="ABOUT">ABOUT</a>
             <a href="#pricelist" class="nav-link" data-translate="PRICELIST">PRICELIST</a>
             <a href="#patreon" class="nav-link" data-translate="PATREON">PATREON</a>
             <a href="#contact" class="nav-link" data-translate="CONTACT">CONTACT</a>
@@ -93,46 +92,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-section-gradient"></div>
-        <div class="about-section-container">
-            <h2 class="section-title" data-translate="about_title">ABOUT NULL</h2>
-
-            <div class="about-layout">
-                <div class="about-image-container">
-                    <div class="about-image-placeholder">
-                        <span class="image-placeholder-text" data-translate="your_image_here">Your Image Here</span>
-                    </div>
-                </div>
-
-                <div class="about-bio">
-                    <h3 class="about-greeting" data-translate="pricelist_hello">Hi! I'm Null.</h3>
-
-                    <p class="about-text" data-translate="pricelist_intro">
-                        I've been working with Roblox scripting for three years! Throughout this time, I've learned to write clean, fast, and efficient code — easy to maintain and expand.
-                    </p>
-
-                    <p class="about-text" data-translate="pricelist_prophetia_text">
-                        I'm currently developing an RPG game called PROPHETIA. To afford help with the project, I've started offering scripting commissions. I also realized I'll need a large budget just to sponsor my game on Roblox so people can actually find it. (Yes, Grow a Garden didn't get 25M players because its good.)
-                    </p>
-
-                    <div class="projects">
-                        <div class="projects-title" data-translate="pricelist_current_projects">Current Projects:</div>
-                        <div class="project">
-                            <div class="project-name" data-translate="pricelist_project_reality">• Reality Traveler</div>
-                            <div class="project-desc" data-translate="pricelist_project_reality_desc">presents a strange mystery about the origin of two people in the PROPHETIA universe.</div>
-                        </div>
-                        <div class="project">
-                            <div class="project-name" data-translate="pricelist_project_messier">• Messier Society</div>
-                            <div class="project-desc" data-translate="pricelist_project_messier_desc">is a spin-off set in a bizarre sci-fi lab where you must uncover what's happening and most importantly — escape. (Messier Society is still in progress.)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
      <!-- PriceList Section -->
      <section id="pricelist" class="pricelist-section">
         <div class="pricelist-gradient"></div>
@@ -141,7 +100,8 @@
             <p class="section-subtitle" data-translate="pricelist_subtitle">Scripting</p>
 
 
-            <div class="services-grid">
+            <div class="pricelist-layout">
+                <div class="services-column">
                     <div class="service-item">
                         <div class="service-header">
                             <div class="service-name" data-translate="service_bug_hunt">Bug Hunt</div>
@@ -191,16 +151,43 @@
                     </div>
                 </div>
 
-            <div class="why-section">
-                <div class="why-title" data-translate="pricelist_why_prices">Why These Prices?</div>
-                <ul class="why-list">
-                    <li data-translate="pricelist_reason_1">3 years of active development experience</li>
-                    <li data-translate="pricelist_reason_2">Clean, documented code following best practices</li>
-                    <li data-translate="pricelist_reason_3">Active projects demonstrating real expertise</li>
-                    <li data-translate="pricelist_reason_4">Fast response times and clear communication</li>
-                    <li data-translate="pricelist_reason_5">Thorough testing before delivery</li>
-                    <li data-translate="pricelist_reason_6">Post-delivery support included</li>
-                </ul>
+                <div class="about-column">
+                    <div class="about-content">
+                        <h2 class="about-title" data-translate="pricelist_hello">Hi! I'm Null.</h2>
+
+                        <p class="about-text" data-translate="pricelist_intro">
+                            I've been working with Roblox scripting for three years! Throughout this time, I've learned to write clean, fast, and efficient code — easy to maintain and expand.
+                        </p>
+
+                        <p class="about-text" data-translate="pricelist_prophetia_text">
+                            I'm currently developing an RPG game called PROPHETIA. To afford help with the project, I've started offering scripting commissions. I also realized I'll need a large budget just to sponsor my game on Roblox so people can actually find it. (Yes, Grow a Garden didn't get 25M players because its good.)
+                        </p>
+
+                        <div class="projects">
+                            <div class="projects-title" data-translate="pricelist_current_projects">Current Projects:</div>
+                            <div class="project">
+                                <div class="project-name" data-translate="pricelist_project_reality">• Reality Traveler</div>
+                                <div class="project-desc" data-translate="pricelist_project_reality_desc">presents a strange mystery about the origin of two people in the PROPHETIA universe.</div>
+                            </div>
+                            <div class="project">
+                                <div class="project-name" data-translate="pricelist_project_messier">• Messier Society</div>
+                                <div class="project-desc" data-translate="pricelist_project_messier_desc">is a spin-off set in a bizarre sci-fi lab where you must uncover what's happening and most importantly — escape. (Messier Society is still in progress.)</div>
+                            </div>
+                        </div>
+
+                        <div class="why-section">
+                            <div class="why-title" data-translate="pricelist_why_prices">Why These Prices?</div>
+                            <ul class="why-list">
+                                <li data-translate="pricelist_reason_1">3 years of active development experience</li>
+                                <li data-translate="pricelist_reason_2">Clean, documented code following best practices</li>
+                                <li data-translate="pricelist_reason_3">Active projects demonstrating real expertise</li>
+                                <li data-translate="pricelist_reason_4">Fast response times and clear communication</li>
+                                <li data-translate="pricelist_reason_5">Thorough testing before delivery</li>
+                                <li data-translate="pricelist_reason_6">Post-delivery support included</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="pricelist-footer">
@@ -274,14 +261,9 @@
                 <h3 data-translate="Discord Server">Discord Server</h3>
             </a>
             
-            <a href="https://x.com/NullSystem32" class="social-card">
+            <a href="https://x.com/DELTA36_EN" class="social-card">
                 <img src="srcs/Twitter.png" class="social-icon">
-                <h3 data-translate="Null (Scripter) Twitter">Null (Scripter) Twitter</h3>
-            </a>
-
-            <a href="https://x.com/DaniPurberry" class="social-card">
-                <img src="srcs/Twitter.png" class="social-icon">
-                <h3 data-translate="Dan (Animator) Twitter">Dan (Animator) Twitter</h3>
+                <h3 data-translate="Twitter">Twitter</h3>
             </a>
             
             <a href="https://gamejolt.com/@NullSystem32" class="social-card">
@@ -310,7 +292,7 @@
 
             <p class="copyright">© 2023 DELTA. All rights reserved.</p>
             <p class="made-with">
-                <span data-translate="Made with">Made with</span> <img src="srcs/Triangle.png" class="glow" alt="Triangle Logo" style="width:20px; height:20px; vertical-align:middle;"> <span data-translate="and love">and love</span>
+                <span data-translate="Made with">Made with</span> <img src="srcs/Triangle.png" class="glow" alt="Triangle Logo" style="width:15px; height:15px; vertical-align:bottom;"> <span data-translate="and love"> and love</span>
             </p>
 
         </div>
