@@ -6,7 +6,7 @@ const games = {
     'prophetia': {
         title: '<span class="prophetia">PROPHETIA</span>',
         description: 'Step into a forgotten world where gods are written, not born.<br>In <span class="prophetia">PROPHETIA</span>, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
-        url: 'https://www.roblox.com/games/12816756411',
+        url: 'www.roblox.com/games/12816756411',
         image: 'srcs/PROPHETIA_Icon.png',
         thumbnail: 'srcs/PROPHETIA_Thumbnail.png',
         quote: "What's the first ever thing made? and if its made, its not the first."
@@ -15,7 +15,7 @@ const games = {
     'reality-traveler': {
         title: 'Reality Traveler',
         description: "A short, mysterious prologue to <span class='prophetia'>PROPHETIA</span>.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
-        url: 'https://www.roblox.com/games/15838646435',
+        url: 'www.roblox.com/games/15838646435',
         image: 'srcs/RealityTraveler_Icon.png',
         thumbnail: 'srcs/RealityTraveler_Thumbnail.png',
         quote: "Between worlds, only silence speaks the truth."
@@ -24,16 +24,25 @@ const games = {
     'messier-society': {
         title: 'Messier Society',
         description: "Awaken in the depths. Explore the unknown. Survive what's left.",
-        url: 'https://www.roblox.com/games/15826904367',
+        url: 'www.roblox.com/games/15826904367',
         image: 'srcs/MS_Icon.png',
         thumbnail: 'srcs/MS_Thumbnail.png',
         quote: "Some awakenings feel like endings."
     },
 
+    'um-dia-brasileiro': {
+        title: 'Um dia Brasileiro',
+        description: "Fight as a Brazillian citizen in a JoJo's Bizarre Adventure unnoficial alternative universe.<br>Discover your Stand, train it, and fight against other Stand users in a quest to become the strongest.",
+        url: 'www.roblox.com/games/81324415757242',
+        image: '',
+        thumbnail: '',
+        quote: "A Brazilian JoJo's Adventure."
+    },
+    
     'blox': {
         title: 'Blox!',
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
-        url: 'https://www.roblox.com/games/104672115779717',
+        url: 'www.roblox.com/games/104672115779717',
         image: 'srcs/Blox_Icon.png',
         thumbnail: 'srcs/Blox_Thumbnail.png',
         quote: "Every creation starts with a single block."
@@ -264,83 +273,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Função para resetar para inglês sem recarregar
+// Função para resetar para inglês sem recarregar
 function resetToEnglish() {
-    // Reset navigation
-    document.querySelector('[data-translate="MAIN"]').textContent = 'MAIN';
-    document.querySelector('[data-translate="GAMES"]').textContent = 'GAMES';
-    document.querySelector('[data-translate="PATREON"]').textContent = 'PATREON';
-    document.querySelector('[data-translate="CONTACT"]').textContent = 'CONTACT';
-    
-    // Reset hero
-    document.querySelector('[data-translate="PLAY NOW"]').textContent = 'PLAY NOW';
-    
-    // Reset games section
-    document.querySelector('[data-translate="OUR GAMES"]').textContent = 'OUR GAMES';
-    document.querySelector('.game-button [data-translate="PLAY"]').textContent = 'PLAY';
-    
-    // Reset current game description
-    const activeGame = document.querySelector('.game-nav-btn.active');
-    if (activeGame) {
-        const gameId = activeGame.getAttribute('data-game');
-        const game = games[gameId];
-        if (game) {
-            document.getElementById('game-description').innerHTML = game.description;
-        }
-    }
-    
-    // Reset patreon section
-    document.querySelector('[data-translate="SUPPORT PROPHETIA DEVELOPMENT"]').textContent = 'SUPPORT PROPHETIA DEVELOPMENT';
-    document.querySelector('[data-translate="patreon_description"]').innerHTML = 'Making such a complex game as <span class="glow">PROPHETIA</span> isn\'t cheap and easy.';
-    document.querySelector('[data-translate="BE A PATREON"]').textContent = 'BE A PATREON';
-    
-    // Reset patreon tiers
-    const tierTranslations = {
-        'Name in Credits': 'Name in Credits',
-        'Monthly Newsletter with Secrets and Curiosities': 'Monthly Newsletter with Secrets and Curiosities',
-        'Development Updates': 'Development Updates',
-        'Discord Role': 'Discord Role',
-        'Access to a VIP Supporters Category on Discord': 'Access to a VIP Supporters Category on Discord',
-        'Early Access to Teasers': 'Early Access to Teasers',
-        'Monthly Q&A Sessions': 'Monthly Q&A Sessions',
-        'Participation in Small Polls': 'Participation in Small Polls',
-        'Early Access to Concept Art': 'Early Access to Concept Art',
-        'Increased Visibility When Sending Art/Concept Suggestions': 'Increased Visibility When Sending Art/Concept Suggestions',
-        'ingame_tag_above_us': 'In-game Tag: "Above Us"',
-        'all benefits from Tier 1 (Lit) and 2 (Messier)': 'all benefits from Tier 1 (Lit) and 2 (Messier)',
-        'Participate in special raffles to help create new characters for the game.': 'Participate in special raffles to help create new characters for the game.',
-        'Join major polls that impact key development decisions.': 'Join major polls that impact key development decisions.',
-        'Access to Top-Secret Development Leaks': 'Access to Top-Secret Development Leaks',
-        'Participation in Stages with Content Creators and High-Level Members': 'Participation in Stages with Content Creators and High-Level Members',
-        'Honored in the Patron Hall of Names': 'Honored in the Patron Hall of Names',
-        'Receive a special, backer-only item in the game': 'Receive a special, backer-only item in the game',
-        'access_special_party_for_supporters': 'Access a special in-game "party" for top supporters only.'
-    };
-    
-    Object.keys(tierTranslations).forEach(key => {
-        const element = document.querySelector(`[data-translate="${key}"]`);
-        if (element) {
-            element.textContent = tierTranslations[key];
-        }
-    });
-    
-    // Reset contact section
-    document.querySelector('[data-translate="CONECT WITH US"]').textContent = 'CONECT WITH US';
-    document.querySelector('[data-translate="contact_description"]').textContent = 'Follow our socials for updates & announcements.';
-    document.querySelector('[data-translate="Discord Server"]').textContent = 'Discord Server';
-    document.querySelector('[data-translate="Null (Scripter) Twitter"]').textContent = 'Null (Scripter) Twitter';
-    document.querySelector('[data-translate="Dan (Animator) Twitter"]').textContent = 'Dan (Animator) Twitter';
-    document.querySelector('[data-translate="GameJolt"]').textContent = 'GameJolt';
-    document.querySelector('[data-translate="Roblox Group"]').textContent = 'Roblox Group';
-    
-    // Reset footer
-    document.querySelector('[data-translate="Made with"]').textContent = 'Made with';
-    document.querySelector('[data-translate="and love"]').textContent = 'and love';
-    
-    // Reset hero quote (mas não muda mais dinamicamente)
-    const defaultGame = games[DEFAULT_GAME];
-    if (defaultGame) {
-        const heroDescription = document.querySelector('.hero-description');
-        if (heroDescription) heroDescription.textContent = `"${defaultGame.quote}"`;
+    if (window.translations && window.translations['en']) {
+        window.translateContent('en');
     }
 }
 

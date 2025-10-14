@@ -1,3 +1,4 @@
+
 // Sistema de traduções
 var translations = {
     'pt': {
@@ -24,25 +25,19 @@ var translations = {
         'pricelist_title': 'TABELA DE PREÇOS DO NULL',
         'pricelist_subtitle': 'Scripts',
         'service_bug_hunt': 'Caça aos Bugs',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
         'service_quick_script': 'Script Pequeno',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
         'service_feature_addition': 'Adição de Função',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
         'service_entire_system': 'Sistema Completo',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
         'service_weekly_help': 'Ajuda Semanal',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
         'service_technical_consultation': 'Consultoria Técnica',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/hora)',
-        'pricelist_hello': 'E aí! Eu sou o Null.',
-        'pricelist_intro': 'Trabalho com programação no Roblox há três anos. Durante esse tempo, aprendi a escrever código limpo, rápido e eficiente — fácil de manter e expandir.',
+        'pricelist_hello': 'OI! Eu sou o Null!',
+        'pricelist_intro': 'Trabalho com programação no Roblox há três anos. Durante esse tempo, aprendi a desenvolver um código limpo, rápido e eficiente — fácil de manter e expandir.',
         'pricelist_prophetia_text': 'No momento, estou desenvolvendo um jogo de RPG chamado PROPHETIA. Pra conseguir financiar ajuda no projeto, comecei a oferecer comissões de programação. Também percebi que vou precisar de um baita orçamento só pra patrocinar o jogo no Roblox e fazer as pessoas encontrarem ele. (Sim, Grow a Garden não chegou a 25M de jogadores porque é bom.)',
         'pricelist_current_projects': 'Projetos Atuais:',
         'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'apresenta um mistério estranho sobre a origem de duas figuras no universo de PROPHETIA.',
+        'pricelist_project_reality_desc': 'O primeiro Teaster de PROPHETIA. <br>Apresenta um mistério sobre a origem de duas figuras no universo de PROPHETIA. Com uma ambientação enigmatica em um lugar no qual voce não sabe como foi parar... ou sabe?',
         'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'é um spin-off ambientado em um laboratório de ficção científica bizarro onde você precisa descobrir o que tá acontecendo e, mais importante — escapar. (Messier Society ainda está em desenvolvimento.)',
+        'pricelist_project_messier_desc': 'O primeiro Spin-Off, Segundo e ultimo Teaser pré-lançamento de PROPHETIA. <br>Ambientado em um laboratório futurista estranho onde <span class="glow" style="--GS: 1px;">v</span>ocê pr<span class="glow" style="--GS: 1px;">e</span>cisa descob<span class="glow" style="--GS: 1px;">ri</span>r o que es<span class="glow" style="--GS: 1px;">t</span>á <span class="glow" style="--GS: 1px;">a</span>contecendo e, mai<span class="glow" style="--GS: 1px;">s</span> importante — escapar.<br>(Messier Society ainda está em desenvolvimento.)',
         'pricelist_why_prices': 'Por que esses Preços?',
         'pricelist_reason_1': '3 anos de experiência em desenvolvimento de jogos no Roblox Studio',
         'pricelist_reason_2': 'Código limpo e documentado seguindo as melhores práticas',
@@ -116,25 +111,19 @@ var translations = {
         'pricelist_title': 'LISTA DE PRECIOS DE NULL',
         'pricelist_subtitle': 'Scripts',
         'service_bug_hunt': 'Caza de Bugs',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
         'service_quick_script': 'Script Rápido',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
         'service_feature_addition': 'Adición de Funcionalidad',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
         'service_entire_system': 'Sistema Completo',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
         'service_weekly_help': 'Ayuda Semanal',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
         'service_technical_consultation': 'Consultoría Técnica',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/hora)',
-        'pricelist_hello': '¡Hola! Soy Null.',
-        'pricelist_intro': 'He trabajado con programación de Roblox durante tres años. Durante este tiempo, he aprendido a escribir código limpio, rápido y eficiente — fácil de mantener y expandir.',
-        'pricelist_prophetia_text': 'Actualmente estoy desarrollando un juego RPG llamado PROPHETIA. Para poder pagar ayuda con el proyecto, he comenzado a ofrecer comisiones de programación. También me di cuenta de que necesitaré un gran presupuesto solo para patrocinar mi juego en Roblox para que la gente pueda encontrarlo. (Sí, Grow a Garden no llegó a 25M de jugadores porque sea bueno.)',
+        'pricelist_hello': '¡Hola! ¡Soy Null!',
+        'pricelist_intro': 'Trabajo con programación de Roblox desde hace tres años. Durante este tiempo, aprendí a desarrollar código limpio, rápido y eficiente — fácil de mantener y expandir.',
+        'pricelist_prophetia_text': 'Actualmente estoy desarrollando un juego RPG llamado PROPHETIA. Para conseguir financiar ayuda en el proyecto, comencé a ofrecer comisiones de programación. También me di cuenta de que necesitaré un gran presupuesto solo para patrocinar el juego en Roblox y hacer que la gente lo encuentre. (Sí, Grow a Garden no llegó a 25M de jugadores porque sea bueno.)',
         'pricelist_current_projects': 'Proyectos Actuales:',
         'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'presenta un misterio extraño sobre el origen de dos figuras en el universo de PROPHETIA.',
+        'pricelist_project_reality_desc': 'El primer Teaser de PROPHETIA. <br>Presenta un misterio sobre el origen de dos figuras en el universo de PROPHETIA. Con una ambientación enigmática en un lugar en el que no sabes cómo fuiste a parar... ¿o sí?',
         'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'es un spin-off ambientado en un laboratorio de ciencia ficción bizarro donde debes descubrir qué está pasando y, lo más importante — escapar. (Messier Society todavía está en desarrollo.)',
+        'pricelist_project_messier_desc': 'El primer Spin-Off, Segundo y último Teaser pre-lanzamiento de PROPHETIA. <br>Ambientado en un laboratorio futurista extraño donde de<span class="glow" style="--GS: 1px;">v</span>elar<span class="glow" style="--GS: 1px;">e</span>s lo que está ocur<span class="glow" style="--GS: 1px;">ri</span>endo y, más impor<span class="glow" style="--GS: 1px;">t</span>ante — log<span class="glow" style="--GS: 1px;">ra</span>r e<span class="glow" style="--GS: 1px;">s</span>capar.<br>(Messier Society todavía está en desarrollo.)',
         'pricelist_why_prices': '¿Por Qué Estos Precios?',
         'pricelist_reason_1': '3 años de experiencia en desarrollo de juegos en Roblox Studio',
         'pricelist_reason_2': 'Código limpio y documentado siguiendo las mejores prácticas',
@@ -173,7 +162,7 @@ var translations = {
         // Contact Section
         'CONECT WITH US': 'CONÉCTATE CON NOSOTROS',
         'contact_description': 'Sigue nuestras redes sociales para actualizaciones y anuncios.',
-        'Discord Server': 'Servidor Discord',
+        'Discord Server': 'Servidor en Discord',
         'Null (Scripter) Twitter': 'Twitter',
         'GameJolt': 'GameJolt',
         'Roblox Group': 'Grupo Roblox',
@@ -208,25 +197,19 @@ var translations = {
         'pricelist_title': 'LISTE DE PRIX DE NULL',
         'pricelist_subtitle': 'Scripts',
         'service_bug_hunt': 'Chasse aux Bugs',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
         'service_quick_script': 'Script Rapide',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
         'service_feature_addition': 'Ajout de Fonctionnalité',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
         'service_entire_system': 'Système Complet',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
         'service_weekly_help': 'Aide Hebdomadaire',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
         'service_technical_consultation': 'Consultation Technique',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/heure)',
-        'pricelist_hello': 'Bonjour! Je suis Null.',
-        'pricelist_intro': 'Je travaille avec la programmation Roblox depuis trois ans. Pendant ce temps, j\'ai appris à écrire du code propre, rapide et efficace — facile à maintenir et à développer.',
-        'pricelist_prophetia_text': 'Je développe actuellement un jeu RPG appelé PROPHETIA. Pour financer l\'aide sur le projet, j\'ai commencé à offrir des commissions de programmation. J\'ai également réalisé que j\'aurai besoin d\'un gros budget juste pour parrainer mon jeu sur Roblox afin que les gens puissent le trouver. (Oui, Grow a Garden n\'a pas atteint 25M de joueurs parce qu\'il est bon.)',
+        'pricelist_hello': 'Bonjour! Je suis Null!',
+        'pricelist_intro': 'Je travaille avec la programmation Roblox depuis trois ans. Pendant ce temps, j\'ai appris à développer du code propre, rapide et efficace — facile à maintenir et à étendre.',
+        'pricelist_prophetia_text': 'Actuellement, je développe un jeu RPG appelé PROPHETIA. Pour réussir à financer de l\'aide sur le projet, j\'ai commencé à offrir des commissions de programmation. J\'ai également réalisé que j\'aurai besoin d\'un gros budget juste pour parrainer le jeu sur Roblox et faire en sorte que les gens le trouvent. (Oui, Grow a Garden n\'a pas atteint 25M de joueurs parce qu\'il est bon.)',
         'pricelist_current_projects': 'Projets Actuels:',
         'pricelist_project_reality': '• Reality Traveler',
-        'pricelist_project_reality_desc': 'présente un mystère étrange sur l\'origine de deux figures dans l\'univers de PROPHETIA.',
+        'pricelist_project_reality_desc': 'Le premier Teaser de PROPHETIA. <br>Présente un mystère sur l\'origine de deux figures dans l\'univers de PROPHETIA. Avec une ambiance énigmatique dans un endroit où vous ne savez pas comment vous êtes arrivé... ou le savez-vous?',
         'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'est un spin-off situé dans un laboratoire de science-fiction bizarre où vous devez découvrir ce qui se passe et surtout — vous échapper. (Messier Society est toujours en développement.)',
+        'pricelist_project_messier_desc': 'Le premier Spin-Off, Deuxième et dernier Teaser pré-lancement de PROPHETIA. <br>Situé dans un laboratoire futuriste étrange où <span class="glow" style="--GS: 1px;">v</span>ous d<span class="glow" style="--GS: 1px;">e</span>vez découv<span class="glow" style="--GS: 1px;">ri</span>r ce qui se passe e<span class="glow" style="--GS: 1px;">t</span>, plus import<span class="glow" style="--GS: 1px;">a</span>nt — vou<span class="glow" style="--GS: 1px;">s</span> échapper.<br>(Messier Society est toujours en développement.)',
         'pricelist_why_prices': 'Pourquoi Ces Prix?',
         'pricelist_reason_1': '3 ans d\'expérience en développement de jeux dans Roblox Studio',
         'pricelist_reason_2': 'Code propre et documenté suivant les meilleures pratiques',
@@ -265,7 +248,7 @@ var translations = {
         // Contact Section
         'CONECT WITH US': 'CONNECTEZ-VOUS AVEC NOUS',
         'contact_description': 'Suivez nos réseaux sociaux pour les mises à jour et annonces.',
-        'Discord Server': 'Serveur Discord',
+        'Discord Server': 'Serveur sur Discord',
         'Null (Scripter) Twitter': 'Twitter',
         'GameJolt': 'GameJolt',
         'Roblox Group': 'Groupe Roblox',
@@ -300,17 +283,11 @@ var translations = {
         'pricelist_title': 'NULL\'S PREISLISTE',
         'pricelist_subtitle': 'Scripts',
         'service_bug_hunt': 'Bug-Jagd',
-        'service_bug_hunt_robux': '(± 3.915 - 10.240 Robux)',
         'service_quick_script': 'Schnelles Skript',
-        'service_quick_script_robux': '(± 6.525 - 16.965 Robux)',
         'service_feature_addition': 'Funktionserweiterung',
-        'service_feature_addition_robux': '(± 13.050 - 39.145 Robux)',
         'service_entire_system': 'Gesamtes System',
-        'service_entire_system_robux': '(± 52.190 - 156.570 Robux)',
         'service_weekly_help': 'Wöchentliche Hilfe',
-        'service_weekly_help_robux': '(± 31.315 - 65.240 Robux)',
         'service_technical_consultation': 'Technische Beratung',
-        'service_technical_consultation_robux': '(± 10.440 - 20.880 Robux/Stunde)',
         'pricelist_hello': 'Hallo! Ich bin Null.',
         'pricelist_intro': 'Ich arbeite seit drei Jahren mit Roblox-Programmierung. In dieser Zeit habe ich gelernt, sauberen, schnellen und effizienten Code zu schreiben — einfach zu warten und zu erweitern.',
         'pricelist_prophetia_text': 'Ich entwickle derzeit ein RPG-Spiel namens PROPHETIA. Um Hilfe für das Projekt zu finanzieren, habe ich begonnen, Programmieraufträge anzubieten. Mir wurde auch klar, dass ich ein großes Budget brauche, nur um mein Spiel auf Roblox zu sponsern, damit die Leute es überhaupt finden können. (Ja, Grow a Garden hat nicht 25M Spieler erreicht, weil es gut ist.)',
@@ -318,7 +295,7 @@ var translations = {
         'pricelist_project_reality': '• Reality Traveler',
         'pricelist_project_reality_desc': 'präsentiert ein seltsames Geheimnis über den Ursprung zweier Figuren im PROPHETIA-Universum.',
         'pricelist_project_messier': '• Messier Society',
-        'pricelist_project_messier_desc': 'ist ein Spin-off in einem bizarren Sci-Fi-Labor, wo Sie herausfinden müssen, was passiert und vor allem — entkommen. (Messier Society ist noch in Arbeit.)',
+        'pricelist_project_messier_desc': 'Der erste Spin-Off, Zweiter und letzter Teaser <span class="glow" style="--GS: 1px;">v</span>or d<span class="glow" style="--GS: 1px;">e</span>m Sta<span class="glow" style="--GS: 1px;">r</span>t von PROPHETIA. <br><span class="glow" style="--GS: 1px;">I</span>n einem seltsamen futuris<span class="glow" style="--GS: 1px;">t</span>ischen L<span class="glow" style="--GS: 1px;">a</span>bor, wo <span class="glow" style="--GS: 1px;">S</span>ie herausfinden müssen, was passiert und vor allem — entkommen.<br>(Messier Society ist noch in Arbeit.)',
         'pricelist_why_prices': 'Warum Diese Preise?',
         'pricelist_reason_1': '3 Jahre Erfahrung in der Spieleentwicklung in Roblox Studio',
         'pricelist_reason_2': 'Sauberer, dokumentierter Code nach Best Practices',
@@ -358,7 +335,8 @@ var translations = {
         'CONECT WITH US': 'VERBINDEN SIE SICH MIT UNS',
         'contact_description': 'Folgen Sie unseren sozialen Medien für Updates und Ankündigungen.',
         'Discord Server': 'Discord Server',
-        'Null (Scripter) Twitter': 'Twitter',
+        'Null (Scripter) Twitter': 'Null (Programmierer) Twitter',
+        'Dan (Animator) Twitter': 'Dan (Animator) Twitter',
         'GameJolt': 'GameJolt',
         'Roblox Group': 'Roblox Gruppe',
         
@@ -369,12 +347,49 @@ var translations = {
     }
 };
 
-// Função para traduzir o conteúdo
+// Function to capture original English text from HTML
+function captureOriginalEnglishText() {
+    if (translations['en']) return; // Already captured
+    
+    translations['en'] = {};
+    
+    // Capture all elements with data-translate
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (element.tagName === 'INPUT' && element.type === 'submit') {
+            translations['en'][key] = element.value;
+        } else {
+            translations['en'][key] = element.innerHTML;
+        }
+    });
+    
+    // Capture game descriptions - get the FIRST game as default
+    const firstGameId = Object.keys(window.games || {})[0];
+    if (firstGameId && window.games) {
+        const game = window.games[firstGameId];
+        const descKey = firstGameId.replace('-', '_') + '_desc';
+        translations['en'][descKey] = game.description;
+    }
+    
+    // Capture all game descriptions from the games object
+    if (window.games) {
+        Object.keys(window.games).forEach(gameId => {
+            const game = window.games[gameId];
+            const descKey = gameId.replace('-', '_') + '_desc';
+            translations['en'][descKey] = game.description;
+            
+            const quoteKey = gameId.replace('-', '_') + '_quote';
+            translations['en'][quoteKey] = game.quote;
+        });
+    }
+}
+
+// Function to translate content
 function translateContent(language) {
     const translation = translations[language];
     if (!translation) return;
     
-    // Traduzir elementos por texto
+    // Translate elements by text
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
         if (translation[key]) {
@@ -386,7 +401,7 @@ function translateContent(language) {
         }
     });
     
-    // Traduzir descrições dos jogos
+    // Translate game descriptions
     const gameDescription = document.getElementById('game-description');
     const activeGame = document.querySelector('.game-nav-btn.active');
     if (gameDescription && activeGame) {
@@ -397,35 +412,44 @@ function translateContent(language) {
         }
     }
     
-    // Traduzir frase do hero (apenas se não for o jogo padrão)
+    // Translate hero phrase
     const heroDescription = document.querySelector('.hero-description');
-    if (heroDescription) {
-        const defaultGame = window.games ? window.games[window.DEFAULT_GAME || 'prophetia'] : null;
-        if (defaultGame) {
-            const quoteKey = (window.DEFAULT_GAME || 'prophetia').replace('-', '_') + '_quote';
-            if (translation[quoteKey]) {
-                heroDescription.textContent = `"${translation[quoteKey]}"`;
-            }
+    if (heroDescription && window.DEFAULT_GAME) {
+        const quoteKey = window.DEFAULT_GAME.replace('-', '_') + '_quote';
+        if (translation[quoteKey]) {
+            heroDescription.textContent = `"${translation[quoteKey]}"`;
         }
     }
     
-    // Salvar idioma selecionado
+    // Save selected language
     localStorage.setItem('selectedLanguage', language);
 }
 
-// Função para carregar idioma salvo
+// Function to load saved language
 function loadSavedLanguage() {
     const savedLanguage = localStorage.getItem('selectedLanguage');
+    
+    // Set the select value
+    const languageSelect = document.getElementById('language-select');
+    if (languageSelect && savedLanguage) {
+        languageSelect.value = savedLanguage;
+    }
+    
+    // Only apply translation if language is NOT English
     if (savedLanguage && savedLanguage !== 'en' && translations[savedLanguage]) {
         translateContent(savedLanguage);
-        const languageSelect = document.getElementById('language-select');
-        if (languageSelect) {
-            languageSelect.value = savedLanguage;
-        }
     }
 }
 
-// Exportar funções para uso global
-window.translateContent = translateContent;
+// Export functions for global use
+window.captureOriginalEnglishText = captureOriginalEnglishText;
 window.loadSavedLanguage = loadSavedLanguage;
+window.translateContent = translateContent;
 window.translations = translations;
+
+// Capture English IMMEDIATELY when script loads (before DOMContentLoaded)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', captureOriginalEnglishText);
+} else {
+    captureOriginalEnglishText();
+}
