@@ -6,7 +6,7 @@ const games = {
     'prophetia': {
         title: '<span class="prophetia">PROPHETIA</span>',
         description: 'Step into a forgotten world where gods are written, not born.<br>In <span class="prophetia">PROPHETIA</span>, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
-        url: 'www.roblox.com/games/12816756411',
+        url: 'https://www.roblox.com/games/12816756411',
         image: 'srcs/PROPHETIA_Icon.png',
         thumbnail: 'srcs/PROPHETIA_Thumbnail.png',
         quote: "What's the first ever thing made? and if its made, its not the first."
@@ -15,7 +15,7 @@ const games = {
     'reality-traveler': {
         title: 'Reality Traveler',
         description: "A short, mysterious prologue to <span class='prophetia'>PROPHETIA</span>.<br>Reality Traveler drops you in a silent space between worlds, armed only with thought and vision. It's not about what you do, but what you notice. Look closely—your story has already begun.",
-        url: 'www.roblox.com/games/15838646435',
+        url: 'https://www.roblox.com/games/15838646435',
         image: 'srcs/RealityTraveler_Icon.png',
         thumbnail: 'srcs/RealityTraveler_Thumbnail.png',
         quote: "Between worlds, only silence speaks the truth."
@@ -24,7 +24,7 @@ const games = {
     'messier-society': {
         title: 'Messier Society',
         description: "Awaken in the depths. Explore the unknown. Survive what's left.",
-        url: 'www.roblox.com/games/15826904367',
+        url: 'https://www.roblox.com/games/15826904367',
         image: 'srcs/MS_Icon.png',
         thumbnail: 'srcs/MS_Thumbnail.png',
         quote: "Some awakenings feel like endings."
@@ -33,7 +33,7 @@ const games = {
     'um-dia-brasileiro': {
         title: 'Um dia Brasileiro',
         description: "Fight as a Brazillian citizen in a JoJo's Bizarre Adventure unnoficial alternative universe.<br>Discover your Stand, train it, and fight against other Stand users in a quest to become the strongest.",
-        url: 'www.roblox.com/games/81324415757242',
+        url: 'https://www.roblox.com/games/81324415757242',
         image: '',
         thumbnail: '',
         quote: "A Brazilian JoJo's Adventure."
@@ -42,7 +42,7 @@ const games = {
     'blox': {
         title: 'Blox!',
         description: 'Build with blocks.<br>Paint, connect, and power them.<br>Create anything from simple structures to complex machines in a fully interactive sandbox.',
-        url: 'www.roblox.com/games/104672115779717',
+        url: 'https://www.roblox.com/games/104672115779717',
         image: 'srcs/Blox_Icon.png',
         thumbnail: 'srcs/Blox_Thumbnail.png',
         quote: "Every creation starts with a single block."
