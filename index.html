@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELTA</title>
+    <link rel="icon" type="image/png" href="srcs/Triangle.png">
+
+    <meta name="description" content="Main DELTA Website. Portfolio of our games and services.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-triangle"></div>
+    </div>
+
+    <canvas id="delta-interactive-bg"></canvas>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="logo">
+            <span>DELTA</span>
+        </div>
+
+        <nav>
+            <a href="#home" class="nav-link active" data-translate="MAIN">MAIN</a>
+            <a href="#games" class="nav-link" data-translate="GAMES">GAMES</a>
+            <a href="#pricelist" class="nav-link" data-translate="PRICELIST">PRICELIST</a>
+            <a href="#patreon" class="nav-link" data-translate="PATREON">PATREON</a>
+            <a href="#contact" class="nav-link" data-translate="CONTACT">CONTACT</a>
+
+            <!-- Language Selector -->
+            <div class="language-selector">
+                <select id="language-select" class="language-select">
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="pt">🇧🇷 PT</option>
+                    <option value="es">🇪🇸 ES</option>
+                    <option value="fr">🇫🇷 FR</option>
+                    <option value="de">🇩🇪 DE</option>
+                </select>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title"><span class="glow">PROPHETIA</span></h1>
+                <p class="hero-description">"What's the first ever thing made? and if its made, its not the first."</p>
+                <a href="https://www.roblox.com/games/12816756411" target="_blank" class="play-button">
+                    <span class="play-icon">▶</span>
+                    <span data-translate="PLAY NOW">PLAY NOW</span>
+                </a>
+            </div>
+            <div class="hero-game-thumb">
+                <div class="game-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games-section">
+        <h2 class="section-title" data-translate="OUR GAMES">OUR GAMES</h2>
+
+        <div class="games-nav">
+
+        </div>
+
+        <div class="game-showcase">
+            <div class="game-details">
+                <div class="game-card-thumb" id="game-card-thumb"></div>
+
+                <div class="game-content">
+                    <h3 id="game-title">PROPHETIA</h3>
+                    <p id="game-description">Step into a forgotten world where gods are written, not born. In PROPHETIA,
+                        you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore
+                        broken realms, uncover lost memories, and piece together the truth behind a divine creation lost
+                        to time. The world does not wait for heroes—only those who ask the right questions.</p>
+                    <a id="game-link" href="https://www.roblox.com/games/12816756411" target="_blank"
+                        class="game-button">
+                        <span data-translate="PLAY">PLAY</span>
+                    </a>
+                </div>
+            </div>
+            <div class="game-image-container">
+                <div id="game-bg" class="game-background"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PriceList Section -->
+    <section id="pricelist" class="pricelist-section">
+        <div class="pricelist-gradient"></div>
+        <div class="pricelist-container">
+            <h2 class="section-title" data-translate="pricelist_title">NULL's PRICELIST</h2>
+            <p class="section-subtitle" data-translate="pricelist_subtitle">Scripting</p>
+
+            <!-- Promos Section -->
+            <div class="promos-grid">
+                <!-- Combo 1: Starter Game -->
+                <div class="promo-card">
+                    <h3 data-translate="combo_starter">Combo "Starter Game"</h3>
+                    <div class="promo-details">
+                        <div class="pulse-target"><span data-translate="promo_pay">Pay</span>: 2 Quick Scripts</div>
+                        <div class="pulse-target"><span data-translate="promo_get">Get</span>: 1 Technical Consultation
+                            (FREE)</div>
+                    </div>
+                    <div class="promo-price-box">
+                        <div class="promo-price">$35 - $100</div>
+                    </div>
+                    <div class="promo-economy pulse-target">
+                        <span data-translate="unit_save_up_to">Save</span> $60
+                    </div>
+                </div>
+
+                <!-- Combo 2: Power Up -->
+                <div class="promo-card">
+                    <h3 data-translate="combo_powerup">Combo "Power Up"</h3>
+                    <div class="promo-details">
+                        <div class="pulse-target"><span data-translate="promo_pay">Pay</span>: 1 Feature + 1 Script
+                        </div>
+                        <div class="pulse-target"><span data-translate="promo_get">Get</span>: 1 Bug Hunt (FREE)</div>
+                    </div>
+                    <div class="promo-price-box">
+                        <div class="promo-price">$50 - $150</div>
+                    </div>
+                    <div class="promo-economy pulse-target">
+                        <span data-translate="unit_save_up_to">Save</span> $25
+                    </div>
+                </div>
+
+                <!-- Combo 3: VIP Dev -->
+                <div class="promo-card">
+                    <div class="promo-badge" data-translate="HOT COMBO">HOT COMBO</div>
+                    <h3 data-translate="combo_vip">Combo "VIP Dev"</h3>
+                    <div class="promo-details">
+                        <div class="pulse-target"><span data-translate="promo_pay">Pay</span>: 2 weeks Help</div>
+                        <div class="pulse-target"><span data-translate="promo_get">Get</span>: 1 Entire System (FREE)
+                        </div>
+                    </div>
+                    <div class="promo-price-box">
+                        <div class="promo-price">$160 - $640</div>
+                    </div>
+                    <div class="promo-economy pulse-target">
+                        <span data-translate="unit_save_up_to">Save</span> $300+
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricelist-layout">
+                <div class="services-column">
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_bug_hunt">Bug Hunt</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$15 - $30</span></div>
+                        </div>
+                        <div class="service-robux">(± 7,500 - 15,000 Robux)</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_quick_script">Quick Script</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$20 - $65</span></div>
+                        </div>
+                        <div class="service-robux">(± 10,000 - 32,500 Robux)</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_feature_addition">Feature Addition</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$40 - $125</span></div>
+                        </div>
+                        <div class="service-robux">(± 20,000 - 62,500 Robux)</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_entire_system">Entire System</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$100 - $625</span></div>
+                        </div>
+                        <div class="service-robux">(± 50,000 - 312,500+ Robux)</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_weekly_help">Weekly Help</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$100 - $400</span></div>
+                        </div>
+                        <div class="service-robux">(± 50,000 - 200,000 Robux)</div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-header">
+                            <div class="service-name" data-translate="service_technical_consultation">Technical
+                                Consultation</div>
+                            <div class="service-price"><span class="glow" style="--GS: 6px;">$30 - $75/h</span></div>
+                        </div>
+                        <div class="service-robux">(± 15,000 - 37,500 Robux/h)</div>
+                    </div>
+
+                    <div class="pricelist-footer">
+                        <div class="footer-note" data-translate="pricelist_footer_note">(Prices in USD via PayPal
+                            include a 20% discount. Robux payments are more expensive due to Roblox transaction fees and
+                            DevEx conversion.)</div>
+                    </div>
+                </div>
+
+                <div class="about-column">
+                    <div class="about-content">
+                        <h2 class="about-title" data-translate="pricelist_hello">Hi! I'm Null.</h2>
+
+                        <p class="about-text" data-translate="pricelist_intro">
+                            I've been working with Roblox scripting for three years! Throughout this time, I've learned
+                            to write clean, fast, and efficient code — easy to maintain and expand.
+                        </p>
+
+                        <p class="about-text" data-translate="pricelist_prophetia_text">
+                            I'm currently developing an RPG game called PROPHETIA. To afford help with the project, I've
+                            started offering scripting commissions. I also realized I'll need a large budget just to
+                            sponsor my game on Roblox so people can actually find it. (Yes, Grow a Garden didn't get 25M
+                            players because its good.)
+                        </p>
+
+                        <div class="projects">
+                            <div class="projects-title" data-translate="pricelist_current_projects">Current Projects:
+                            </div>
+                            <div class="project">
+                                <div class="project-name" data-translate="pricelist_project_messier">• Messier Society
+                                </div>
+                                <div class="project-desc" data-translate="pricelist_project_messier_desc">Is a spin-off
+                                    set in a bizarre sci-fi lab where you must unco<span class="glow"
+                                        style="--GS: 1px;">ver</span> what's happen<span class="glow"
+                                        style="--GS: 1px;">i</span>ng and mos<span class="glow"
+                                        style="--GS: 1px;">t</span> import<span class="glow"
+                                        style="--GS: 1px;">a</span>ntly — e<span class="glow"
+                                        style="--GS: 1px;">s</span>cape. (Messier Society is still in progress.)</div>
+                            </div>
+                            <div class="project">
+                                <div class="project-name" data-translate="pricelist_project_reality">• PROPHETIA</div>
+                                <div class="project-desc" data-translate="pricelist_project_reality_desc">Y'know, the
+                                    game I'm currently developing.</div>
+                            </div>
+                        </div>
+
+                        <div class="why-section">
+                            <div class="why-title" data-translate="pricelist_why_prices">Why These Prices?</div>
+                            <ul class="why-list">
+                                <li data-translate="pricelist_reason_1">3 years of active development experience</li>
+                                <li data-translate="pricelist_reason_2">Clean, documented code following best practices
+                                </li>
+                                <li data-translate="pricelist_reason_3">Active projects demonstrating real expertise
+                                </li>
+                                <li data-translate="pricelist_reason_4">Fast response times and clear communication</li>
+                                <li data-translate="pricelist_reason_5">Thorough testing before delivery</li>
+                                <li data-translate="pricelist_reason_6">Post-delivery support included</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patreon Section -->
+    <section id="patreon" class="patreon-section">
+        <h2 class="section-title" data-translate="SUPPORT PROPHETIA DEVELOPMENT">SUPPORT <span
+                class="prophetia">PROPHETIA</span> DEVELOPMENT</h2>
+        <p class="section-description" data-translate="patreon_description">Making such a complex game as <span
+                class="prophetia">PROPHETIA</span> isn't cheap and easy.</p>
+
+        <div class="patreon-tiers">
+            <div class="tier">
+                <span style="font-size: 30px;">Lit </span> <img src="srcs/Lit.png" class="glow"
+                    style="width:32px; height:32px;">
+                <div class="tier-price">$5<span>/month</span></div>
+                <ul>
+                    <li data-translate="Name in Credits">Name in Credits</li>
+                    <li data-translate="Monthly Newsletter with Secrets and Curiosities">Monthly Newsletter with Secrets
+                        and Curiosities</li>
+                    <li data-translate="Development Updates">Development Updates</li>
+                    <li data-translate="Discord Role">Discord Role</li>
+                    <li data-translate="Access to a VIP Supporters Category on Discord">Access to a VIP Supporters
+                        Category on Discord</li>
+                </ul>
+            </div>
+
+            <div class="tier featured">
+                <span style="font-size: 30px;">Writter </span> <img src="srcs/Writter.png" class="glow"
+                    style="width:32px; height:32px;">
+                <div class="tier-price">$10<span>/month</span></div>
+                <ul>
+                    <li data-translate="Early Access to Teasers">Early Access to Teasers</li>
+                    <li data-translate="Monthly Q&A Sessions">Monthly Q&A Sessions</li>
+                    <li data-translate="Participation in Small Polls">Participation in Small Polls</li>
+                    <li data-translate="Early Access to Concept Art">Early Access to Concept Art</li>
+                    <li data-translate="Increased Visibility When Sending Art/Concept Suggestions">Increased Visibility
+                        When Sending Art/Concept Suggestions</li>
+                    <li data-translate="ingame_tag_above_us">In-game Tag: "Above Us"</li>
+                    <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit)
+                        and 2 (Messier)</li>
+                </ul>
+            </div>
+
+            <div class="tier">
+                <span style="font-size: 30px;">Messier </span> <img src="srcs/Messier.png" class="glow"
+                    style="width:32px; height:32px;">
+                <div class="tier-price">$15<span>/month</span></div>
+                <ul>
+                    <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit)
+                        and 2 (Messier)</li>
+                    <li data-translate="Participate in special raffles to help create new characters for the game.">
+                        Participate in special raffles to help create new characters for the game.</li>
+                    <li data-translate="Join major polls that impact key development decisions.">Join major polls that
+                        impact key development decisions.</li>
+                    <li data-translate="Access to Top-Secret Development Leaks">Access to Top-Secret Development Leaks
+                    </li>
+                    <li data-translate="Participation in Stages with Content Creators and High-Level Members">
+                        Participation in Stages with Content Creators and High-Level Members</li>
+                    <li data-translate="Honored in the Patron Hall of Names">Honored in the Patron Hall of Names</li>
+                    <li data-translate="Receive a special, backer-only item in the game">Receive a special, backer-only
+                        item in the game</li>
+                    <li data-translate="access_special_party_for_supporters">Access a special in-game "party" for top
+                        supporters only.</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="https://www.patreon.com/c/PROPHETIA" target="_blank" class="patreon-button">
+            <span data-translate="BE A PATREON">BE A PATREON</span>
+        </a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title" data-translate="CONECT WITH US">CONECT WITH US</h2>
+        <p class="section-description" data-translate="contact_description">Follow our socials for updates &
+            announcements.</p>
+
+        <div class="social-grid">
+            <a href="https://discord.gg/EAttXgZP8T" class="social-card">
+                <img src="srcs/Discord.png" class="social-icon">
+                <h3 data-translate="Discord Server">Discord Server</h3>
+            </a>
+
+            <a href="https://x.com/NullSystem32" class="social-card">
+                <img src="srcs/Twitter.png" class="social-icon">
+                <h3 data-translate="Twitter">Twitter</h3>
+            </a>
+
+            <a href="https://gamejolt.com/@NullSystem32" class="social-card">
+                <img src="srcs/Gamejolt.png" class="social-icon">
+                <h3 data-translate="GameJolt">GameJolt</h3>
+            </a>
+
+            <a href="https://www.roblox.com/communities/499623038" class="social-card">
+                <img src="srcs/Roblox.png" class="social-icon">
+                <h3 data-translate="Roblox Group">Roblox Group</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <blockquote>
+                "What's the first ever thing made? and if its made, its not the first."
+            </blockquote>
+            <cite>— Delta</cite>
+            <div class="easter-egg-trigger" id="triangle-easter-egg">
+                <img src="srcs/Triangle.png" class="triangle-easter"></img>
+                <span class="click-counter" id="click-counter"></span>
+            </div>
+
+            <p class="copyright">© 2023 DELTA. All rights reserved.</p>
+            <p class="made-with">
+                <span data-translate="Made with">Made with</span> <img src="srcs/Triangle.png" class="glow"
+                    alt="Triangle Logo" style="width:15px; height:15px; vertical-align:bottom;"> <span
+                    data-translate="and love"> and love</span>
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- Hacker Easter Egg Modal -->
+    <div id="hacker-egg-modal" class="hacker-egg-modal">
+        <div class="crt-overlay"></div>
+        <div class="matrix-bg" id="matrix-bg"></div>
+        <pre class="ascii-pyramid" id="ascii-pyramid"></pre>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
