@@ -4,9 +4,9 @@ const games = {
     'prophetia': {
         title: '<span class="prophetia">PROPHETIA</span>',
         description: '[UPCOMING] Step into a forgotten world where gods are written, not born.<br>In <span class="prophetia">PROPHETIA</span>, you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore broken realms, uncover lost memories, and piece together the truth behind a divine creation lost to time. The world does not wait for heroes—only those who ask the right questions.',
-        url: 'https://www.roblox.com/games/12816756411',
         image: 'srcs/PROPHETIA_Icon.png',
         thumbnail: 'srcs/PROPHETIA_Thumbnail.png',
+        url: 'https://www.roblox.com/games/12816756411',
         quote: "What's the first ever thing made? and if its made, its not the first."
     },
 
@@ -32,8 +32,8 @@ const games = {
         title: 'Um dia Brasileiro',
         description: "[ALPHA] Fight as a Brazillian citizen in a JoJo's Bizarre Adventure unnoficial alternative universe.<br>Discover your Stand, train it, and fight against other Stand users in a quest to become the strongest.",
         url: 'https://www.roblox.com/games/81324415757242',
-        image: '',
-        thumbnail: '',
+        image: 'srcs/UDB_Icon.png',
+        thumbnail: 'srcs/UDB_Thumbnail.png',
         quote: "A Brazilian JoJo's Adventure."
     },
 
@@ -61,10 +61,359 @@ window.addEventListener('load', () => {
             loadingScreen.style.opacity = '0';
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 500);
+                // Initialize Delta Pet after loading
+                initDeltaPet();
+            }, 800);
         }
-    }, 1200);
+    }, 500);
 });
+
+// Delta Pet AI Logic
+class DeltaPet {
+    constructor() {
+        this.element = document.createElement('div');
+        this.element.className = 'delta-pet';
+        this.element.innerHTML = `
+            <img src="srcs/Triangle.png" alt="Delta Pet">
+            <div class="doom-container"></div>
+        `;
+        this.doomContainer = this.element.querySelector('.doom-container');
+        document.body.appendChild(this.element);
+
+        this.pos = {
+            x: Math.random() * (window.innerWidth - 120),
+            y: window.scrollY + Math.random() * (window.innerHeight - 120)
+        };
+        this.vel = { x: (Math.random() - 0.5) * 6, y: (Math.random() - 0.5) * 6 };
+        this.acc = { x: 0, y: 0 };
+        this.maxSpeed = 5;
+        this.maxForce = 0.25;
+        this.isDoomActive = false;
+
+        this.state = 'WANDER';
+        this.target = null;
+        this.targetElement = null;
+        this.deltaBits = [];
+        this.particles = [];
+
+        this.findNewTask();
+
+        this.element.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!this.isDoomActive) this.toggleDoom(true);
+        });
+
+        document.addEventListener('click', () => {
+            if (this.isDoomActive) this.toggleDoom(false);
+        });
+
+        this.animate();
+    }
+
+    findNewTask() {
+        if (this.isDoomActive) return;
+
+        const dice = Math.random();
+
+        if (this.deltaBits.length > 3 && dice < 0.3) {
+            this.state = 'PLAY';
+            const bit = this.deltaBits[Math.floor(Math.random() * this.deltaBits.length)];
+            this.target = { x: bit.x, y: bit.y };
+        } else if (dice < 0.4) {
+            this.state = 'WANDER';
+            this.target = {
+                x: Math.random() * window.innerWidth,
+                y: window.scrollY + Math.random() * (window.innerHeight - 120)
+            };
+            this.targetElement = null;
+        } else if (dice < 0.75) {
+            this.state = 'SEEK';
+            const targets = document.querySelectorAll('.game-showcase, .game-icon-link, .promo-card, .service-item, .tier, .tier-icon, .tier ul li, .social-card');
+            if (targets.length > 0) {
+                this.targetElement = targets[Math.floor(Math.random() * targets.length)];
+                const rect = this.targetElement.getBoundingClientRect();
+                this.target = {
+                    x: rect.left + rect.width / 2 + window.scrollX,
+                    y: rect.top + rect.height / 2 + window.scrollY
+                };
+            }
+        } else {
+            this.state = 'BUILD';
+            this.target = {
+                x: 100 + Math.random() * (window.innerWidth - 200),
+                y: window.scrollY + 100 + Math.random() * (window.innerHeight - 200)
+            };
+            this.targetElement = null;
+        }
+
+        setTimeout(() => this.findNewTask(), 3000 + Math.random() * 5000);
+    }
+
+    toggleDoom(active) {
+        this.isDoomActive = active;
+        if (this.isDoomActive) {
+            this.element.classList.add('doom-active');
+            this.element.style.transform = 'rotate(0deg)';
+            this.vel = { x: 0, y: 0 };
+            this.acc = { x: 0, y: 0 };
+
+            // Criar iframe apenas quando entrar no modo Doom
+            if (!this.doomContainer.querySelector('iframe')) {
+                const iframe = document.createElement('iframe');
+                iframe.className = 'doom-iframe';
+                iframe.src = 'https://ustymukhman.github.io/webDOOM/public/';
+                iframe.scrolling = 'no';
+                this.doomContainer.appendChild(iframe);
+            }
+        } else {
+            this.element.classList.remove('doom-active');
+
+            // Aguarda o fade-out do CSS (0.8s) para destruir o iframe e o áudio
+            setTimeout(() => {
+                if (!this.isDoomActive) {
+                    this.doomContainer.innerHTML = '';
+                }
+            }, 850);
+
+            this.vel = { x: (Math.random() - 0.5) * 6, y: (Math.random() - 0.5) * 6 };
+        }
+    }
+
+    createDeltaBit() {
+        const shapes = ['triangle', 'square', 'circle'];
+        const shape = shapes[Math.floor(Math.random() * shapes.length)];
+
+        const bitEl = document.createElement('div');
+        bitEl.className = `delta-bit bit-${shape}`;
+        bitEl.style.left = `${this.pos.x + 50}px`;
+        bitEl.style.top = `${this.pos.y + 50}px`;
+        document.body.appendChild(bitEl);
+
+        const bit = {
+            el: bitEl,
+            x: this.pos.x + 50,
+            y: this.pos.y + 50,
+            vx: (Math.random() - 0.5) * 6,
+            vy: (Math.random() - 0.5) * 6
+        };
+
+        this.deltaBits.push(bit);
+
+        setTimeout(() => {
+            bitEl.classList.add('dissolve');
+            setTimeout(() => {
+                bitEl.remove();
+                this.deltaBits = this.deltaBits.filter(b => b !== bit);
+            }, 1000);
+        }, 8000);
+    }
+
+    spawnTrail() {
+        if (Math.random() > 0.3) {
+            const partEl = document.createElement('div');
+            partEl.className = 'pet-particle';
+            partEl.style.left = `${this.pos.x + 60}px`;
+            partEl.style.top = `${this.pos.y + 60}px`;
+            document.body.appendChild(partEl);
+            const part = { el: partEl, x: this.pos.x + 60, y: this.pos.y + 60, life: 1.0, decay: 0.04 + Math.random() * 0.04 };
+            this.particles.push(part);
+        }
+    }
+
+    affectEnvironment() {
+        const proximity = 200;
+        // Seleciona elementos interativos, exceto o que está na header
+        const els = document.querySelectorAll('button, a, .promo-card, .social-card, .tier, .tier-icon, .tier ul li');
+        els.forEach(el => {
+            if (el.closest('#header')) return; // Delta não mexe na header
+
+            const rect = el.getBoundingClientRect();
+            const ex = rect.left + rect.width / 2 + window.scrollX;
+            const ey = rect.top + rect.height / 2 + window.scrollY;
+            const dx = ex - (this.pos.x + 60);
+            const dy = ey - (this.pos.y + 60);
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < proximity) {
+                const power = (1 - dist / proximity) * 20;
+                el.style.transform = `translate(${dx * power * 0.08}px, ${dy * power * 0.08}px) rotate(${dx * 0.02}deg)`;
+                el.style.boxShadow = `0 0 ${power * 2}px rgba(255,255,255,0.1)`;
+            } else if (el.style.transform && el.style.transform.includes('translate')) {
+                el.style.transform = '';
+                el.style.boxShadow = '';
+            }
+        });
+
+        if (window.deltaBG) {
+            window.deltaBG.petMouse = { x: this.pos.x + 60, y: this.pos.y + 60 };
+        }
+    }
+
+    applyInteractionEffect() {
+        if (!this.targetElement) return;
+        this.element.classList.add('thinking');
+
+        // Salva transform original ou garante que reseta para o estado base do CSS
+        const isPlayBtn = this.targetElement.classList.contains('game-icon-link');
+        let count = 0;
+        const intr = setInterval(() => {
+            const rx = (Math.random() - 0.5) * 12;
+            const ry = (Math.random() - 0.5) * 12;
+            const scale = isPlayBtn ? 1.02 : 1.05;
+            this.targetElement.style.transform = `translate(${rx}px, ${ry}px) scale(${scale})`;
+            count++;
+            if (count > 25) {
+                clearInterval(intr);
+                // Reseta forçando estilo limpo para evitar bugs de tilt
+                this.targetElement.style.transform = '';
+                if (this.element) this.element.classList.remove('thinking');
+            }
+        }, 40);
+    }
+
+    handleImpact() {
+        this.element.classList.add('pet-impact');
+        setTimeout(() => this.element.classList.remove('pet-impact'), 400);
+    }
+
+    applyForce(force) {
+        this.acc.x += force.x;
+        this.acc.y += force.y;
+    }
+
+    update() {
+        if (this.isDoomActive) {
+            this.element.style.left = `${this.pos.x}px`;
+            this.element.style.top = `${this.pos.y}px`;
+            return;
+        }
+
+        // Particle System
+        this.spawnTrail();
+        this.particles.forEach((p, i) => {
+            p.life -= p.decay;
+            p.el.style.opacity = p.life;
+            p.el.style.transform = `scale(${p.life})`;
+            // Não precisa atualizar x/y aqui se forem fixos no spawn
+            if (p.life <= 0) {
+                p.el.remove();
+                this.particles.splice(i, 1);
+            }
+        });
+
+        // Env awareness
+        this.affectEnvironment();
+
+        // Update Delta Bits Physics
+        this.deltaBits.forEach(bit => {
+            bit.x += bit.vx;
+            bit.y += bit.vy;
+            bit.vx *= 0.96; // Friction
+            bit.vy *= 0.96;
+            bit.el.style.left = `${bit.x}px`;
+            bit.el.style.top = `${bit.y}px`;
+
+            // Interaction: Pet pushes bits away
+            let dx = bit.x - (this.pos.x + 60);
+            let dy = bit.y - (this.pos.y + 60);
+            let d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 80) {
+                bit.vx += dx * 0.2;
+                bit.vy += dy * 0.2;
+            }
+        });
+
+        if (this.target) {
+            let desiredX = this.target.x - this.pos.x;
+            let desiredY = this.target.y - this.pos.y;
+            let dist = Math.sqrt(desiredX * desiredX + desiredY * desiredY);
+
+            if (dist < 40) {
+                if (this.state === 'SEEK') {
+                    this.state = 'INTERACT';
+                    this.applyInteractionEffect();
+                    this.target = null;
+                } else if (this.state === 'BUILD') {
+                    this.createDeltaBit();
+                    this.state = 'WANDER';
+                    this.target = null;
+                } else if (this.state === 'PLAY') {
+                    this.state = 'WANDER';
+                    this.target = null;
+                }
+            } else {
+                let speed = this.state === 'SEEK' ? this.maxSpeed * 1.8 : this.maxSpeed;
+                desiredX = (desiredX / dist) * speed;
+                desiredY = (desiredY / dist) * speed;
+
+                let steerX = desiredX - this.vel.x;
+                let steerY = desiredY - this.vel.y;
+
+                let steerLen = Math.sqrt(steerX * steerX + steerY * steerY);
+                if (steerLen > this.maxForce) {
+                    steerX = (steerX / steerLen) * this.maxForce;
+                    steerY = (steerY / steerLen) * this.maxForce;
+                }
+                this.applyForce({ x: steerX, y: steerY });
+            }
+        }
+
+        this.vel.x += this.acc.x;
+        this.vel.y += this.acc.y;
+
+        let speedLimit = this.state === 'SEEK' ? this.maxSpeed * 1.8 : this.maxSpeed;
+        let speed = Math.sqrt(this.vel.x * this.vel.x + this.vel.y * this.vel.y);
+        if (speed > speedLimit) {
+            this.vel.x = (this.vel.x / speed) * speedLimit;
+            this.vel.y = (this.vel.y / speed) * speedLimit;
+        }
+
+        this.pos.x += this.vel.x;
+        this.pos.y += this.vel.y;
+        this.acc = { x: 0, y: 0 };
+
+        // REAL BOUNDARIES - NO WRAPPING
+        const padding = 120;
+        const winW = window.innerWidth;
+        const docH = document.documentElement.scrollHeight;
+
+        if (this.pos.x < 0) {
+            this.pos.x = 0;
+            this.vel.x *= -0.8; // Bounce
+            this.handleImpact();
+        } else if (this.pos.x > winW - padding) {
+            this.pos.x = winW - padding;
+            this.vel.x *= -0.8;
+            this.handleImpact();
+        }
+
+        if (this.pos.y < 0) {
+            this.pos.y = 0;
+            this.vel.y *= -0.8;
+            this.handleImpact();
+        } else if (this.pos.y > docH - padding - 150) { // Margem de segurança extra para o footer
+            this.pos.y = docH - padding - 150;
+            this.vel.y *= -0.8;
+            this.handleImpact();
+        }
+
+        this.element.style.left = `${this.pos.x}px`;
+        this.element.style.top = `${this.pos.y}px`;
+
+        const angle = Math.atan2(this.vel.y, this.vel.x) + Math.PI / 2;
+        this.element.style.transform = `rotate(${angle}rad)`;
+    }
+
+    animate() {
+        this.update();
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+function initDeltaPet() {
+    new DeltaPet();
+}
+
 
 let lastScrollY = window.scrollY;
 const header = document.getElementById('header');
@@ -123,9 +472,9 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
-function initializeHero() {
-    const defaultGame = games[DEFAULT_GAME];
-    if (!defaultGame) return;
+function updateHeroContent(gameId) {
+    const game = games[gameId];
+    if (!game) return;
 
     const heroTitle = document.querySelector('.hero-title .glow');
     const heroDescription = document.querySelector('.hero-description');
@@ -134,27 +483,62 @@ function initializeHero() {
     const heroBackground = document.querySelector('.hero-bg');
 
     if (heroTitle) {
-        heroTitle.innerHTML = defaultGame.title;
+        heroTitle.innerHTML = game.title;
         const heroTitleRoot = document.querySelector('.hero-title');
         if (heroTitleRoot) {
             heroTitleRoot.className = 'hero-title';
-            heroTitleRoot.classList.add(`font-${DEFAULT_GAME}`);
+            heroTitleRoot.classList.add(`font-${gameId}`);
         }
     }
-    if (heroPlayButton) heroPlayButton.href = defaultGame.url;
-    if (heroGameImage) heroGameImage.style.backgroundImage = `url(${defaultGame.image})`;
-    if (heroBackground) heroBackground.style.backgroundImage = `url(${defaultGame.thumbnail})`;
+    if (heroPlayButton) heroPlayButton.href = game.url;
+    if (heroGameImage) heroGameImage.style.backgroundImage = `url(${game.image})`;
+    if (heroBackground) heroBackground.style.backgroundImage = `url(${game.thumbnail})`;
 
     if (heroDescription) {
         heroDescription.className = 'hero-description';
-        heroDescription.classList.add(`font-${DEFAULT_GAME}`);
+        heroDescription.classList.add(`font-${gameId}`);
         const currentLanguage = document.getElementById('language-select')?.value || 'en';
         if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
-            const quoteKey = DEFAULT_GAME.replace('-', '_') + '_quote';
+            const quoteKey = gameId.replace('-', '_') + '_quote';
             const translatedQuote = window.translations[currentLanguage][quoteKey];
-            heroDescription.textContent = `"${translatedQuote || defaultGame.quote}"`;
+            heroDescription.textContent = `"${translatedQuote || game.quote}"`;
         } else {
-            heroDescription.textContent = `"${defaultGame.quote}"`;
+            heroDescription.textContent = `"${game.quote}"`;
+        }
+    }
+}
+
+function initializeHero() {
+    updateHeroContent(DEFAULT_GAME);
+
+    const defaultGame = games[DEFAULT_GAME];
+    // Sincroniza o Showcase de Jogos completamente na largada
+    const gameBg = document.getElementById('game-bg');
+    const gameIconFloating = document.getElementById('game-icon-floating');
+    const gameTitle = document.getElementById('game-title');
+    const gameDescription = document.getElementById('game-description');
+    const gameLink = document.getElementById('game-link');
+
+    if (gameBg) gameBg.style.backgroundImage = `url(${defaultGame.thumbnail})`;
+    if (gameIconFloating) gameIconFloating.style.backgroundImage = `url(${defaultGame.image})`;
+    if (gameLink) gameLink.href = defaultGame.url;
+
+    if (gameTitle) {
+        gameTitle.innerHTML = defaultGame.title;
+        gameTitle.className = '';
+        gameTitle.classList.add(`font-${DEFAULT_GAME}`);
+    }
+
+    if (gameDescription) {
+        gameDescription.className = '';
+        gameDescription.classList.add(`font-${DEFAULT_GAME}`);
+        const currentLanguage = document.getElementById('language-select')?.value || 'en';
+        if (currentLanguage !== 'en' && window.translations && window.translations[currentLanguage]) {
+            const descKey = DEFAULT_GAME.replace('-', '_') + '_desc';
+            const translatedDesc = window.translations[currentLanguage][descKey];
+            gameDescription.innerHTML = translatedDesc || defaultGame.description;
+        } else {
+            gameDescription.innerHTML = defaultGame.description;
         }
     }
 }
@@ -172,7 +556,7 @@ function generateGameButtons() {
         button.setAttribute('data-game', gameId);
         button.innerHTML = game.title;
 
-        if (index === 0) {
+        if (gameId === DEFAULT_GAME) {
             button.classList.add('active');
         }
 
@@ -180,6 +564,11 @@ function generateGameButtons() {
     });
 
     setupGameNavigation();
+
+    // Reaplica o vidro nos novos botões gerados
+    if (typeof applyAllGlassEffects === 'function') {
+        applyAllGlassEffects();
+    }
 }
 
 function setupGameNavigation() {
@@ -188,7 +577,7 @@ function setupGameNavigation() {
     const gameDescription = document.getElementById('game-description');
     const gameLink = document.getElementById('game-link');
     const gameBg = document.getElementById('game-bg');
-    const gameCardThumb = document.getElementById('game-card-thumb');
+    const gameIconFloating = document.getElementById('game-icon-floating');
 
     gameNavBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -201,7 +590,9 @@ function setupGameNavigation() {
 
                 const gameDetails = document.querySelector('.game-details');
                 gameDetails.style.opacity = '0';
-                gameDetails.style.transform = 'translateY(30px)';
+                gameDetails.style.transform = 'translateY(15px)';
+                gameIconFloating.style.opacity = '0';
+                gameIconFloating.style.transform = 'scale(0.9) translateY(20px)';
 
                 setTimeout(() => {
                     gameTitle.innerHTML = game.title;
@@ -223,15 +614,29 @@ function setupGameNavigation() {
                     }
 
                     gameLink.href = game.url;
-                    gameBg.style.backgroundImage = `url(${game.image})`;
-                    gameCardThumb.style.backgroundImage = `url(${game.thumbnail})`;
+
+                    if (game.thumbnail) {
+                        gameBg.style.backgroundImage = `url(${game.thumbnail})`;
+                    } else {
+                        gameBg.style.backgroundImage = 'none';
+                    }
+
+                    if (game.image) {
+                        gameIconFloating.style.backgroundImage = `url(${game.image})`;
+                    } else {
+                        gameIconFloating.style.backgroundImage = 'none';
+                    }
 
                     gameDetails.style.opacity = '1';
                     gameDetails.style.transform = 'translateY(0)';
-                }, 300);
+                    gameIconFloating.style.opacity = '1';
+                    gameIconFloating.style.transform = 'scale(1) translateY(0)';
+                }, 400);
             }
         });
+    });
 
+    gameNavBtns.forEach(btn => {
         btn.addEventListener('mouseenter', () => {
             if (!btn.classList.contains('active')) {
                 btn.style.transform = 'translateY(-3px)';
@@ -485,28 +890,6 @@ document.addEventListener('DOMContentLoaded', () => {
     generateGameButtons();
     initializeHero();
 
-    const initialGame = games[Object.keys(games)[0]];
-    if (initialGame) {
-        const gameTitle = document.getElementById('game-title');
-        const gameDescription = document.getElementById('game-description');
-        const gameLink = document.getElementById('game-link');
-        const gameBg = document.getElementById('game-bg');
-
-        if (gameTitle) {
-            gameTitle.innerHTML = initialGame.title;
-            gameTitle.className = '';
-            const firstGameId = Object.keys(games)[0];
-            gameTitle.classList.add(`font-${firstGameId}`);
-        }
-        if (gameDescription) {
-            gameDescription.innerHTML = initialGame.description;
-            gameDescription.className = '';
-            gameDescription.classList.add(`font-${firstGameId}`);
-        }
-        if (gameLink) gameLink.href = initialGame.url;
-        if (gameBg) gameBg.style.backgroundImage = `url(${initialGame.image})`;
-    }
-
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 200);
@@ -516,6 +899,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 class DeltaBackground {
     constructor() {
+        window.deltaBG = this;
         this.canvas = document.getElementById('delta-interactive-bg');
         if (!this.canvas) return;
         this.ctx = this.canvas.getContext('2d');
@@ -656,10 +1040,20 @@ class Particle {
         const dyMouse = this.y - mouse.y;
         const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
 
-        if (distMouse < mouse.radius) {
-            const force = (mouse.radius - distMouse) / mouse.radius;
-            this.speedX += (dxMouse / distMouse) * force * 0.8;
-            this.speedY += (dyMouse / distMouse) * force * 0.8;
+        const petMouse = window.deltaBG?.petMouse || { x: -1000, y: -1000 };
+        const dxPet = this.x - petMouse.x;
+        const dyPet = this.y - petMouse.y;
+        const distPet = Math.sqrt(dxPet * dxPet + dyPet * dyPet);
+
+        if (distMouse < mouse.radius || distPet < mouse.radius) {
+            const forceM = distMouse < mouse.radius ? (mouse.radius - distMouse) / mouse.radius : 0;
+            const forceP = distPet < mouse.radius ? (mouse.radius - distPet) / mouse.radius : 0;
+            const force = Math.max(forceM, forceP);
+            const dx = distMouse < distPet ? dxMouse : dxPet;
+            const dy = distMouse < distPet ? dyMouse : dyPet;
+            const d = Math.sqrt(dx * dx + dy * dy) || 1;
+            this.speedX += (dx / d) * force * 0.8;
+            this.speedY += (dy / d) * force * 0.8;
         } else {
             for (let p2 of allParticles) {
                 if (p2 === this) continue;

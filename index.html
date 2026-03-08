@@ -22,13 +22,22 @@
 <body>
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <div class="loading-triangle"></div>
+        <div class="loading-container">
+            <div class="pyramid-loader">
+                <span class="loader-char">D</span>
+                <span class="loader-char">E</span>
+                <span class="loader-char">L</span>
+                <span class="loader-char">T</span>
+                <span class="loader-char">A</span>
+            </div>
+            <div class="loading-status" data-translate="INITIALIZING">INITIALIZING SYSTEM</div>
+        </div>
     </div>
 
     <canvas id="delta-interactive-bg"></canvas>
 
     <!-- Header -->
-    <header id="header">
+    <header id="header" data-html2canvas-ignore="true">
         <div class="logo">
             <span>DELTA</span>
         </div>
@@ -80,24 +89,33 @@
 
         </div>
 
-        <div class="game-showcase">
-            <div class="game-details">
-                <div class="game-card-thumb" id="game-card-thumb"></div>
+        <div class="game-showcase" id="game-showcase">
+            <div id="game-bg" class="game-background"></div>
 
-                <div class="game-content">
-                    <h3 id="game-title">PROPHETIA</h3>
-                    <p id="game-description">Step into a forgotten world where gods are written, not born. In PROPHETIA,
-                        you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore
-                        broken realms, uncover lost memories, and piece together the truth behind a divine creation lost
-                        to time. The world does not wait for heroes—only those who ask the right questions.</p>
-                    <a id="game-link" href="https://www.roblox.com/games/12816756411" target="_blank"
-                        class="game-button">
-                        <span data-translate="PLAY">PLAY</span>
-                    </a>
+            <div class="game-content-wrapper">
+                <div class="game-details">
+                    <div class="game-content">
+                        <h3 id="game-title">PROPHETIA</h3>
+                        <p id="game-description">Step into a forgotten world where gods are written, not born. In
+                            PROPHETIA,
+                            you are a lone traveler in a vast, surreal reality shaped by stories long abandoned. Explore
+                            broken realms, uncover lost memories, and piece together the truth behind a divine creation
+                            lost
+                            to time. The world does not wait for heroes—only those who ask the right questions.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="game-image-container">
-                <div id="game-bg" class="game-background"></div>
+
+                <a id="game-link" href="https://www.roblox.com/games/12816756411" target="_blank"
+                    class="game-icon-link">
+                    <div class="game-icon-container">
+                        <div id="game-icon-floating" class="game-icon-floating">
+                            <div class="play-overlay-icon">
+                                <span class="play-text">PLAY NOW</span>
+                                <span class="play-arrow">→</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -284,8 +302,7 @@
 
         <div class="patreon-tiers">
             <div class="tier">
-                <span style="font-size: 30px;">Lit </span> <img src="srcs/Lit.png" class="glow"
-                    style="width:32px; height:32px;">
+                <span style="font-size: 30px;">Lit </span> <img src="srcs/Lit.png" class="tier-icon">
                 <div class="tier-price">$5<span>/month</span></div>
                 <ul>
                     <li data-translate="Name in Credits">Name in Credits</li>
@@ -298,9 +315,8 @@
                 </ul>
             </div>
 
-            <div class="tier featured">
-                <span style="font-size: 30px;">Writter </span> <img src="srcs/Writter.png" class="glow"
-                    style="width:32px; height:32px;">
+            <div class="tier">
+                <span style="font-size: 30px;">Writter </span> <img src="srcs/Writter.png" class="tier-icon">
                 <div class="tier-price">$10<span>/month</span></div>
                 <ul>
                     <li data-translate="Early Access to Teasers">Early Access to Teasers</li>
@@ -316,8 +332,7 @@
             </div>
 
             <div class="tier">
-                <span style="font-size: 30px;">Messier </span> <img src="srcs/Messier.png" class="glow"
-                    style="width:32px; height:32px;">
+                <span style="font-size: 30px;">Messier </span> <img src="srcs/Messier.png" class="tier-icon">
                 <div class="tier-price">$15<span>/month</span></div>
                 <ul>
                     <li data-translate="all benefits from Tier 1 (Lit) and 2 (Messier)">all benefits from Tier 1 (Lit)
@@ -400,6 +415,7 @@
         <div class="crt-overlay"></div>
         <div class="matrix-bg" id="matrix-bg"></div>
         <pre class="ascii-pyramid" id="ascii-pyramid"></pre>
+        <div class="hacker-status-text" id="hacker-status-text">INITIALIZING GLOBAL DECRYPTION...</div>
     </div>
 
     <script src="translations.js"></script>
