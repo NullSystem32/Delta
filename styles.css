@@ -1557,18 +1557,21 @@ nav {
     color: #fff;
     font-weight: 300;
     font-family: 'JetBrains Mono', monospace;
-    transform: translateY(-20px);
-    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(1.05);
+    /* Inicia levemente maior para o efeito de entrada */
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.8s cubic-bezier(0.2, 0, 0.2, 1);
 }
 
 .hacker-egg-modal.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: scale(1);
 }
 
 .hacker-egg-modal.glitch-out {
-    animation: cascadeDown 1.5s forwards cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s ease;
 }
 
 .crt-overlay {
@@ -1588,7 +1591,7 @@ nav {
 }
 
 .hacker-egg-modal.active .matrix-bg {
-    opacity: 0.08;
+    opacity: 0.12;
 }
 
 .hacker-egg-modal.active .ascii-pyramid {
@@ -1601,18 +1604,18 @@ nav {
     opacity: 1;
 }
 
-/* Saída - Fadeout e Movimento */
+/* Saída - Delta sobe, Texto desce, Matrix apaga */
 .hacker-egg-modal.glitch-out .matrix-bg {
     opacity: 0;
 }
 
 .hacker-egg-modal.glitch-out .ascii-pyramid {
-    transform: translateY(-100px);
+    transform: translateY(-150px);
     opacity: 0;
 }
 
 .hacker-egg-modal.glitch-out .hacker-status-text {
-    transform: translateY(100px);
+    transform: translateY(150px);
     opacity: 0;
 }
 
@@ -1641,8 +1644,8 @@ nav {
     font-weight: 300;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     white-space: pre;
-    transform: translateY(50px);
-    /* Inicia deslocado */
+    transform: translateY(80px);
+    /* Inicia baixo para subir na entrada */
     opacity: 0;
     animation: jitter 0.1s infinite;
 }
@@ -1656,7 +1659,8 @@ nav {
     font-size: 1rem;
     letter-spacing: 0.3em;
     color: rgba(255, 255, 255, 0.6);
-    transform: translateY(-50px);
+    transform: translateY(-80px);
+    /* Inicia alto para descer na entrada */
     opacity: 0;
     z-index: 2;
 }
@@ -1675,22 +1679,6 @@ nav {
     }
 }
 
-@keyframes cascadeDown {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    40% {
-        transform: translateY(10px);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
 
 @keyframes jitter {
     0% {

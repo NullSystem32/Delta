@@ -128,7 +128,8 @@ class DeltaPet {
             this.targetElement = null;
         } else if (dice < 0.75) {
             this.state = 'SEEK';
-            const targets = document.querySelectorAll('.game-showcase, .game-icon-link, .promo-card, .service-item, .tier, .tier-icon, .tier ul li, .social-card');
+            // NOVOS ALVOS: Hero Icon, Títulos do PriceList, Projetos Atuais, Redes Sociais, Showcase, etc.
+            const targets = document.querySelectorAll('.game-showcase, .game-icon-link, .promo-card, .service-item, .tier, .tier-icon, .tier ul li, .social-card, .hero-game-thumb, .projects-title, .why-title');
             if (targets.length > 0) {
                 this.targetElement = targets[Math.floor(Math.random() * targets.length)];
                 const rect = this.targetElement.getBoundingClientRect();
@@ -223,22 +224,35 @@ class DeltaPet {
     affectEnvironment() {
         const proximity = 200;
         // Seleciona elementos interativos, exceto o que está na header
-        const els = document.querySelectorAll('button, a, .promo-card, .social-card, .tier, .tier-icon, .tier ul li');
+        const els = document.querySelectorAll('button, a, .promo-card, .social-card, .tier, .tier-icon, .tier ul li, .hero-game-thumb, .service-item');
         els.forEach(el => {
-            if (el.closest('#header')) return; // Delta não mexe na header
+            if (el.closest('#header')) return;
 
             const rect = el.getBoundingClientRect();
-            const ex = rect.left + rect.width / 2 + window.scrollX;
-            const ey = rect.top + rect.height / 2 + window.scrollY;
-            const dx = ex - (this.pos.x + 60);
-            const dy = ey - (this.pos.y + 60);
+            const elL = rect.left + window.scrollX;
+            const elR = rect.right + window.scrollX;
+            const elT = rect.top + window.scrollY;
+            const elB = rect.bottom + window.scrollY;
+            const clX = Math.max(elL, Math.min(this.pos.x + 60, elR));
+            const clY = Math.max(elT, Math.min(this.pos.y + 60, elB));
+            const dx = clX - (this.pos.x + 60);
+            const dy = clY - (this.pos.y + 60);
             const dist = Math.sqrt(dx * dx + dy * dy);
 
             if (dist < proximity) {
                 const power = (1 - dist / proximity) * 20;
-                el.style.transform = `translate(${dx * power * 0.08}px, ${dy * power * 0.08}px) rotate(${dx * 0.02}deg)`;
+
+                const cX = elL + rect.width / 2;
+                const cY = elT + rect.height / 2;
+                const vdx = cX - (this.pos.x + 60);
+                const vdy = cY - (this.pos.y + 60);
+
+                const isSmall = el.tagName === 'LI' || el.classList.contains('service-item');
+                const sP = isSmall ? 0.05 : 0.6;
+
+                el.style.transform = `translate(${vdx * power * sP * 0.01}px, ${vdy * power * sP * 0.01}px) rotate(${vdx * 0.005}deg)`;
                 el.style.boxShadow = `0 0 ${power * 2}px rgba(255,255,255,0.1)`;
-            } else if (el.style.transform && el.style.transform.includes('translate')) {
+            } else if (el.style.transform && (el.style.transform.includes('translate') || el.style.boxShadow)) {
                 el.style.transform = '';
                 el.style.boxShadow = '';
             }
@@ -253,18 +267,17 @@ class DeltaPet {
         if (!this.targetElement) return;
         this.element.classList.add('thinking');
 
-        // Salva transform original ou garante que reseta para o estado base do CSS
+        const isSmall = this.targetElement.tagName === 'LI' || this.targetElement.classList.contains('service-item');
         const isPlayBtn = this.targetElement.classList.contains('game-icon-link');
         let count = 0;
         const intr = setInterval(() => {
-            const rx = (Math.random() - 0.5) * 12;
-            const ry = (Math.random() - 0.5) * 12;
-            const scale = isPlayBtn ? 1.02 : 1.05;
+            const rx = (Math.random() - 0.5) * (isSmall ? 4 : 12);
+            const ry = (Math.random() - 0.5) * (isSmall ? 4 : 12);
+            const scale = isSmall ? 1.01 : (isPlayBtn ? 1.02 : 1.05);
             this.targetElement.style.transform = `translate(${rx}px, ${ry}px) scale(${scale})`;
             count++;
             if (count > 25) {
                 clearInterval(intr);
-                // Reseta forçando estilo limpo para evitar bugs de tilt
                 this.targetElement.style.transform = '';
                 if (this.element) this.element.classList.remove('thinking');
             }
@@ -326,9 +339,17 @@ class DeltaPet {
         if (this.target) {
             let desiredX = this.target.x - this.pos.x;
             let desiredY = this.target.y - this.pos.y;
-            let dist = Math.sqrt(desiredX * desiredX + desiredY * desiredY);
+            let centerDist = Math.sqrt(desiredX * desiredX + desiredY * desiredY);
 
-            if (dist < 40) {
+            // Verificação inteligente de proximidade: se chegar na borda, já interage.
+            let hitTarget = centerDist < 40;
+            if (!hitTarget && this.targetElement && this.state === 'SEEK') {
+                const rect = this.targetElement.getBoundingClientRect();
+                const edgeProximity = centerDist - (Math.max(rect.width, rect.height) / 2);
+                if (edgeProximity < 30) hitTarget = true;
+            }
+
+            if (hitTarget) {
                 if (this.state === 'SEEK') {
                     this.state = 'INTERACT';
                     this.applyInteractionEffect();
@@ -342,9 +363,9 @@ class DeltaPet {
                     this.target = null;
                 }
             } else {
-                let speed = this.state === 'SEEK' ? this.maxSpeed * 1.8 : this.maxSpeed;
-                desiredX = (desiredX / dist) * speed;
-                desiredY = (desiredY / dist) * speed;
+                let speed = centerDist < 200 && this.state === 'SEEK' ? this.maxSpeed * 0.8 : (this.state === 'SEEK' ? this.maxSpeed * 1.8 : this.maxSpeed);
+                desiredX = (desiredX / centerDist) * speed;
+                desiredY = (desiredY / centerDist) * speed;
 
                 let steerX = desiredX - this.vel.x;
                 let steerY = desiredY - this.vel.y;
@@ -391,8 +412,8 @@ class DeltaPet {
             this.pos.y = 0;
             this.vel.y *= -0.8;
             this.handleImpact();
-        } else if (this.pos.y > docH - padding - 150) { // Margem de segurança extra para o footer
-            this.pos.y = docH - padding - 150;
+        } else if (this.pos.y > docH - padding - 200) {
+            this.pos.y = docH - padding - 200;
             this.vel.y *= -0.8;
             this.handleImpact();
         }
